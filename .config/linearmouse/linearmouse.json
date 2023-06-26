@@ -1,0 +1,22 @@
+{
+  "$schema" : "https:\/\/schema.linearmouse.app\/0.9.1",
+  "schemes" : [
+    {
+      "pointer" : {
+        "acceleration" : 0,
+        "speed" : 0.7
+      },
+      "if" : {
+        "device" : {
+          "productName" : "Gaming Mouse",
+          "productID" : "0x2530",
+          "category" : "mouse",
+          "vendorID" : "0x93a"
+        }
+      },
+      "buttons" : {
+        "universalBackForward" : true
+      }
+    }
+  ]
+}
