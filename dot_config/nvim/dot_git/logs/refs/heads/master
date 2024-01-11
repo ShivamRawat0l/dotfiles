@@ -1,0 +1,15 @@
+0000000000000000000000000000000000000000 97c039bb88d8bbbcc9b1e3d0dc716a2ba202c6d2 Shivam Rawat <shivamrawat@Shivams-Mini.(none)> 1685360793 +0530	clone: from github.com:ThePrimeagen/init.lua.git
+97c039bb88d8bbbcc9b1e3d0dc716a2ba202c6d2 b4303a76b5965e905c000a19433c30b0fafa9561 Shivam Rawat <shivamrawat6670@gmail.com> 1685469927 +0530	commit: Back to Default The Name is Primagen
+b4303a76b5965e905c000a19433c30b0fafa9561 52c65d5f641b4a39915dcb7bde2a51202ad4bd46 Shivam Rawat <shivamrawat6670@gmail.com> 1686749325 +0530	commit: Changed shortcuts for the Harpoon plugiun
+52c65d5f641b4a39915dcb7bde2a51202ad4bd46 91ca54132d213b24d781e6eb3c5ee3bf039c9183 Shivam Rawat <shivamrawat6670@gmail.com> 1687202618 +0530	commit: Added new theme in the package.
+91ca54132d213b24d781e6eb3c5ee3bf039c9183 164e3ce9a198f468c7435983e74349deadb57d5f Shivam Rawat <shivamrawat6670@gmail.com> 1687205466 +0530	commit: Formatted files. Added nvim autoclose in ts.
+164e3ce9a198f468c7435983e74349deadb57d5f 0460f516a5ec8594114ee7b7802eb89ff7c38ae7 Shivam Rawat <shivamrawat6670@gmail.com> 1687205906 +0530	commit: Added colorizer. Added the autopairs.
+0460f516a5ec8594114ee7b7802eb89ff7c38ae7 e82bb4989042d6e9a17b5f394a60f6351dc954dd Shivam Rawat <shivamrawat6670@gmail.com> 1687505127 +0530	commit: Added Ctrl S to save. Back to basics right!
+e82bb4989042d6e9a17b5f394a60f6351dc954dd 4a8c3c37834aa58ba695355b12a8cb2a9c13d8fa Shivam Rawat <shivamrawat6670@gmail.com> 1687534649 +0530	commit: Control S format on save. :w only for save.
+4a8c3c37834aa58ba695355b12a8cb2a9c13d8fa 1ba3ac6e6ba53cc45fdf46171cbe4c732fe57a9f Shivam Rawat <shivamrawat6670@gmail.com> 1687546321 +0530	commit: Automatic format on save
+1ba3ac6e6ba53cc45fdf46171cbe4c732fe57a9f af8b9a68aefb443bbe7f4e65a75e9e14fe6d6845 Shivam Rawat <shivamrawat6670@gmail.com> 1687546608 +0530	commit: Added oil plugin for file manager.
+af8b9a68aefb443bbe7f4e65a75e9e14fe6d6845 9543d07cf4e8e51bebcae9cd13fa3c76858c94b6 Shivam Rawat <shivamrawat6670@gmail.com> 1687549589 +0530	commit: Using Oil as default file manager
+9543d07cf4e8e51bebcae9cd13fa3c76858c94b6 d4b3f494c527a159ffae14689b99d6a8a4a54469 Shivam Rawat <shivamrawat6670@gmail.com> 1687595923 +0530	commit: Treesj plugin installed
+d4b3f494c527a159ffae14689b99d6a8a4a54469 1b95f769d79040c90bf016ce4e7bd751491f226f Shivam Rawat <shivamrawat6670@gmail.com> 1688640359 +0530	commit: Added support for the swift languge usign the lspconfig
+1b95f769d79040c90bf016ce4e7bd751491f226f 37c7c9a1a77a93504bc513298c4f199b9333deab Shivam Rawat <shivamrawat6670@gmail.com> 1704948072 +0530	commit: Update .DS_Store
+37c7c9a1a77a93504bc513298c4f199b9333deab bb4d50441dc6c3456e11b4dbbef81a553ec8c457 Shivam Rawat <shivamrawat6670@gmail.com> 1704990257 +0530	commit: Added xbase to nvim.
