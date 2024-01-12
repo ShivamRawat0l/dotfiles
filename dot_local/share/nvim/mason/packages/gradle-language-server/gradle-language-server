@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+exec java -jar "/Users/shivamrawat/.local/share/nvim/mason/packages/gradle-language-server/extension/lib/gradle-language-server.jar" "$@"
