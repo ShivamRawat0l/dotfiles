@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "coc-sourcekit": ">=0.0.3"
+  }
+}

@@ -1,0 +1,14 @@
+[font]
+size = 18.0
+normal.family = "JetBrainsMono Nerd Font"
+
+
+[colors.primary]
+background = "#000000"
+
+[window]
+decorations = "none"
+padding.x = 20
+padding.y = 30
+dynamic_padding = true
+startup_mode = "Maximized"

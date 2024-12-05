@@ -1,0 +1,27 @@
+[
+  {
+    "context": "(Editor && showing_completions) || FileFinder",
+    "bindings": {
+      "ctrl-p": "editor::ContextMenuPrev"
+    }
+  },
+  {
+    "context": "Editor",
+    "bindings": {
+      "ctrl+t": null
+    }
+  },
+  {
+    "bindings": {
+      "-": "project_panel::ToggleFocus",
+      "ctrl-e": "tab_switcher::Toggle",
+      "space f": "project_search::ToggleFocus",
+      "ctrl-p": "file_finder::Toggle",
+      "ctrl-s": [
+        "workspace::SendKeystrokes",
+        "escape cmd-s"
+      ],
+      "ctrl+t": "workspace::NewCenterTerminal"
+    }
+  }
+]

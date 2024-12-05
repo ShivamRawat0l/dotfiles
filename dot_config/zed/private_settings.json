@@ -1,0 +1,55 @@
+// Zed settings
+//
+// For information on how to configure Zed, see the Zed
+// documentation: https://zed.dev/docs/configuring-zed
+//
+// To see all of Zed's default settings without changing your
+// custom settings, run the `open default settings` command
+// from the command palette or from `Zed` application menu.
+{
+  "vim_mode": true,
+  "telemetry": {
+    "diagnostics": false,
+    "metrics": false
+  },
+  "theme": "Ayu Mirage",
+  "cursor_blink": false,
+  "cursor_shape": "block",
+  "buffer_font_size": 16,
+  "ui_font_family": "JetBrains Mono NL",
+  "ui_font_size": 20,
+  "active_pane_modifiers": null,
+  "toolbar": {
+    "breadcrumbs": false,
+    "quick_actions": false,
+    "selections_menu": false
+  },
+  "tabs": {
+    "file_icons": true,
+  },
+  "tab_bar": {
+    "show": false
+  },
+  "gutter": {
+    "line_numbers": true,
+  },
+  "relative_line_numbers": true,
+  "show_call_status_icon": false,
+  "format_on_save": "on",
+  "formatter": "language_server",
+  "experimental.theme_overrides": {
+    "editor.background": "#000",
+    "background": "#000",
+    "tab_bar.background": "#000",
+    "editor.active_line.background": "#000",
+    "title_bar.background": "#000",
+    "editor.gutter.background": "#000",
+    "background.appearance": "transparent",
+    "tab.active_background": "#000",
+    "tab.inactive_background": "#000",
+    "surface.background": "#000",
+    "panel.background": "#000",
+    "status_bar.background": "#000",
+    "terminal.background": "#000"
+  },
+}
