@@ -8,7 +8,7 @@ decorations = "none"
 padding.x = 20
 padding.y = 30
 dynamic_padding = true
-startup_mode = "Maximized"
+startup_mode = "SimpleFullscreen"
 
 [colors]
 primary.background = '#000000'
@@ -34,3 +34,11 @@ blue    = '#839496'
 magenta = '#6c71c4'
 cyan    = '#93a1a1'
 white   = '#fdf6e3'
+
+[mouse]
+hide_when_typing = true
+
+
+
+[selection]
+save_to_clipboard = true

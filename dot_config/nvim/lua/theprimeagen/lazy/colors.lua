@@ -23,7 +23,7 @@ return {
                     NormalFloat = { bg = '#000000' },
                     -- Popup menu
                     Pmenu = { bg = '#000000' },
-                    PmenuSel = { bg = '#000000' },
+                    --PmenuSel = { bg = '#000000' },
                     -- Completion menu
                     CmpDocumentationBorder = { bg = '#000000' },
                     CmpDocumentation = { bg = '#000000' },
