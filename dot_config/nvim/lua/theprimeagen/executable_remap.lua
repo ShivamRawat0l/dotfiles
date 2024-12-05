@@ -1,6 +1,9 @@
 vim.g.mapleader = " "
 -- Replacing Default Ex with Oil
--- vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
+--vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
+--
+vim.keymap.set("n", "<leader>w", ":q<CR>")
+-- C-w hjkl for split panes movement
 --
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")

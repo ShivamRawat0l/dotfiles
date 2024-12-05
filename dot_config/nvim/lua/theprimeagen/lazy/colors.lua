@@ -1,90 +1,67 @@
+-- Setting the colorscheme for the neovim
 function ColorMyPencils(color)
-    color = color or "catppuccin-mocha"
+    color = color or "onedark"
     vim.cmd.colorscheme(color)
-    vim.api.nvim_set_hl(0, "Normal", { bg = "#000000" })
-    vim.api.nvim_set_hl(0, "NormalFloat", { bg = "#000000" })
 end
 
 return {
-
     {
-        "erikbackman/brightburn.vim",
-    },
-
-    {
-        "folke/tokyonight.nvim",
-        lazy = false,
-        opts = {},
+        "navarasu/onedark.nvim",
+        name = "onedark",
         config = function()
-            ColorMyPencils()
+            require("onedark").setup({
+                style = "darker",
+                highlights = {
+                    Normal = { bg = '#000000' },
+                    NormalNC = { bg = '#000000' },
+                    -- Optionally, set other background-related highlights to black
+                    SignColumn = { bg = '#000000' },
+                    StatusLine = { bg = '#000000' },
+                    StatusLineNC = { bg = '#000000' },
+                    -- Floating windows
+                    FloatBorder = { bg = '#000000' },
+                    NormalFloat = { bg = '#000000' },
+                    -- Popup menu
+                    Pmenu = { bg = '#000000' },
+                    PmenuSel = { bg = '#000000' },
+                    -- Completion menu
+                    CmpDocumentationBorder = { bg = '#000000' },
+                    CmpDocumentation = { bg = '#000000' },
+                    -- Sidebar and tree-like views
+                    LineNr = { bg = '#000000' },
+                    CursorLineNr = { bg = '#000000' },
+                    -- Telescope and other plugin-specific backgrounds
+                    TelescopeBorder = { bg = '#000000' },
+                    TelescopeNormal = { bg = '#000000' },
+                    TelescopePromptBorder = { bg = '#000000' },
+                    TelescopeResultsBorder = { bg = '#000000' },
+                    TelescopePreviewBorder = { bg = '#000000' },
+                    -- Mini.files and other file explorers,
+                    MiniFilesBorder = { bg = '#000000' },
+                    MiniFilesNormal = { bg = '#000000' },
+
+                    -- Vertical split and scrollbar
+                    VertSplit = { bg = '#000000' },
+                    ScrollbarSlider = { bg = '#000000' },
+
+                    -- Specific plugin backgrounds
+                    NvimTreeNormal = { bg = '#000000' },
+                    NvimTreeWinSeparator = { bg = '#000000' },
+
+                    -- Ensure scrolling background is black
+                    EndOfBuffer = { bg = '#000000' },
+                    MsgArea = { bg = '#000000' }
+                }
+            })
         end
     },
     {
-        "ellisonleao/gruvbox.nvim",
-        name = "gruvbox",
+        "neanias/everforest-nvim",
+        name = "everforestz",
         config = function()
-            require("gruvbox").setup({
-                terminal_colors = true, -- add neovim terminal colors
-                undercurl = true,
-                underline = false,
-                bold = true,
-                italic = {
-                    strings = false,
-                    emphasis = false,
-                    comments = false,
-                    operators = false,
-                    folds = false,
-                },
-                strikethrough = true,
-                invert_selection = false,
-                invert_signs = false,
-                invert_tabline = false,
-                invert_intend_guides = false,
-                inverse = true, -- invert background for search, diffs, statuslines and errors
-                contrast = "",  -- can be "hard", "soft" or empty string
-                palette_overrides = {},
-                overrides = {},
-                dim_inactive = false,
-                transparent_mode = false,
+            require("everforest").setup({
             })
         end,
     },
-    {
-        "folke/tokyonight.nvim",
-        config = function()
-            require("tokyonight").setup({
-                -- your configuration comes here
-                -- or leave it empty to use the default settings
-                style = "storm",        -- The theme comes in three styles, `storm`, `moon`, a darker variant `night` and `day`
-                transparent = true,     -- Enable this to disable setting the background color
-                terminal_colors = true, -- Configure the colors used when opening a `:terminal` in Neovim
-                styles = {
-                    -- Style to be applied to different syntax groups
-                    -- Value is any valid attr-list value for `:help nvim_set_hl`
-                    comments = { italic = false },
-                    keywords = { italic = false },
-                    -- Background styles. Can be "dark", "transparent" or "normal"
-                    sidebars = "dark", -- style for sidebars, see below
-                    floats = "dark",   -- style for floating windows
-                },
-            })
-        end
-    },
-
-    {
-        "rose-pine/neovim",
-        name = "rose-pine",
-        config = function()
-            require('rose-pine').setup({
-                disable_background = true,
-                styles = {
-                    italic = false,
-                },
-            })
-            ColorMyPencils()
-        end
-    },
-    {
-        "catppuccin/nvim", name = "catppuccin", priority = 1000 }
 
 }
