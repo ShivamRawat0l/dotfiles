@@ -1,3 +1,0 @@
-#!/usr/bin/env bash
-export GEM_PATH="/Users/shivamrawat/.local/share/nvim/mason/packages/htmlbeautifier:$GEM_PATH"
-exec /Users/shivamrawat/.local/share/nvim/mason/packages/htmlbeautifier/bin/htmlbeautifier "$@"
