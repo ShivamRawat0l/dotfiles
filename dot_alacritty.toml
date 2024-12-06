@@ -12,6 +12,7 @@ startup_mode = "SimpleFullscreen"
 
 [colors]
 primary.background = '#000000'
+selection = { text = "CellForeground", background = "#2aa198" }
 
 # Normal colors
 [colors.normal]
