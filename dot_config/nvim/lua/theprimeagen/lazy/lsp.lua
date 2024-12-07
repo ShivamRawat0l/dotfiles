@@ -15,7 +15,15 @@ return {
 
     config = function()
         local lspconfig = require('lspconfig')
-        lspconfig.sourcekit.setup {}
+        lspconfig.sourcekit.setup({
+            capabilities = {
+                workspace = {
+                    didChangeWatchedFiles = {
+                        dynamicRegistration = true,
+                    },
+                },
+            },
+        })
         local cmp = require('cmp')
         local cmp_lsp = require("cmp_nvim_lsp")
         local capabilities = vim.tbl_deep_extend(
@@ -88,6 +96,7 @@ return {
             sources = cmp.config.sources({
                 { name = 'nvim_lsp' },
                 { name = 'luasnip' }, -- For luasnip users.
+                { name = "supermaven" },
             }, {
                 { name = 'buffer' },
             })

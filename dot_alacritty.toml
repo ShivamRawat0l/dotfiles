@@ -1,6 +1,7 @@
 [font]
 size = 19.0
 normal.family = "JetBrainsMono Nerd Font"
+offset.y = 2
 
 
 [window]
