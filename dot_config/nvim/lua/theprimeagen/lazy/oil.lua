@@ -65,6 +65,7 @@ return {
             keymaps = {
                 ["g?"] = { "actions.show_help", mode = "n" },
                 ["<CR>"] = "actions.select",
+                [";"] = "actions.select",
                 ["<C-v>"] = { "actions.select", opts = { vertical = true } },
                 ["<C-h>"] = { "actions.select", opts = { horizontal = true } },
                 ["<C-p>"] = "actions.preview",
@@ -78,6 +79,7 @@ return {
                 ["g."] = { "actions.toggle_hidden", mode = "n" },
                 ["g\\"] = { "actions.toggle_trash", mode = "n" },
             },
+            use_default_keymaps = false,
         })
         vim.keymap.set('n', '-', function()
             local oil = require("oil")
