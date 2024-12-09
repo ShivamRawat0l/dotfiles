@@ -1,9 +1,9 @@
--- Setting the colorscheme for the neovim
 function ColorMyPencils(color)
     color = color or "onedark"
     vim.cmd.colorscheme(color)
 end
 
+local color = "#0a0a0a"
 return {
     {
         "navarasu/onedark.nvim",
@@ -11,48 +11,56 @@ return {
         config = function()
             require("onedark").setup({
                 style = "darker",
+                transparent = true,
+                -- Lualine options --
+                lualine = {
+                    transparent = false, -- lualine center bar transparency
+                },
+
                 highlights = {
-                    Normal = { bg = '#000000' },
-                    NormalNC = { bg = '#000000' },
+
+                    --Normal = { bg = '#000000' },
+                    --NormalNC = { bg = '#000000' },
                     -- Optionally, set other background-related highlights to black
-                    SignColumn = { bg = '#000000' },
-                    StatusLine = { bg = '#000000' },
-                    StatusLineNC = { bg = '#000000' },
+                    SignColumn = { bg = color },
+                    StatusLine = { bg = color },
+                    StatusLineNC = { bg = color },
                     -- Floating windows
-                    FloatBorder = { bg = '#000000' },
-                    NormalFloat = { bg = '#000000' },
+                    FloatBorder = { bg = color },
+                    NormalFloat = { bg = color },
                     -- Popup menu
-                    Pmenu = { bg = '#000000' },
-                    --PmenuSel = { bg = '#000000' },
+                    Pmenu = { bg = color },
+                    --PmenuSel = { bg = color},
                     -- Completion menu
-                    CmpDocumentationBorder = { bg = '#000000' },
-                    CmpDocumentation = { bg = '#000000' },
+                    CmpDocumentationBorder = { bg = color },
+                    CmpDocumentation = { bg = color },
                     -- Sidebar and tree-like views
-                    LineNr = { bg = '#000000' },
-                    CursorLineNr = { bg = '#000000' },
+                    --LineNr = { bg = '#000000' },
+                    --CursorLineNr = { bg = '#000000' },
                     -- Telescope and other plugin-specific backgrounds
-                    TelescopeBorder = { bg = '#000000' },
-                    TelescopeNormal = { bg = '#000000' },
-                    TelescopePromptBorder = { bg = '#000000' },
-                    TelescopeResultsBorder = { bg = '#000000' },
-                    TelescopePreviewBorder = { bg = '#000000' },
+                    TelescopeBorder = { bg = color },
+                    TelescopeNormal = { bg = color },
+                    TelescopePromptBorder = { bg = color },
+                    TelescopeResultsBorder = { bg = color },
+                    TelescopePreviewBorder = { bg = color },
                     -- Mini.files and other file explorers,
-                    MiniFilesBorder = { bg = '#000000' },
-                    MiniFilesNormal = { bg = '#000000' },
+                    MiniFilesBorder = { bg = color },
+                    MiniFilesNormal = { bg = color },
 
                     -- Vertical split and scrollbar
-                    VertSplit = { bg = '#000000' },
-                    ScrollbarSlider = { bg = '#000000' },
+                    VertSplit = { bg = color },
+                    ScrollbarSlider = { bg = color },
 
                     -- Specific plugin backgrounds
-                    NvimTreeNormal = { bg = '#000000' },
-                    NvimTreeWinSeparator = { bg = '#000000' },
+                    NvimTreeNormal = { bg = color },
+                    NvimTreeWinSeparator = { bg = color },
 
                     -- Ensure scrolling background is black
-                    EndOfBuffer = { bg = '#000000' },
-                    MsgArea = { bg = '#000000' }
+                    --EndOfBuffer = { bg = color},
+                    --MsgArea = { bg = color}
                 }
             })
+            require("onedark").load()
         end
     },
     {
@@ -63,5 +71,4 @@ return {
             })
         end,
     },
-
 }

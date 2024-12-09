@@ -1,15 +1,17 @@
 [font]
-size = 19.0
+size = 18.0
 normal.family = "JetBrainsMono Nerd Font"
-offset.y = 2
+offset.y = 4
 
 
 [window]
-decorations = "none"
+dynamic_title = true
+decorations = "transparent"
 padding.x = 20
 padding.y = 30
 dynamic_padding = true
 startup_mode = "SimpleFullscreen"
+opacity = 0.98
 
 [colors]
 primary.background = '#000000'

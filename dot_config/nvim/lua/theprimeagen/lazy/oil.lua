@@ -5,7 +5,7 @@ return {
     config = function()
         CustomOilBar = function()
             local path = vim.fn.expand "%"
-            path = path:gsub("oil://", "")
+            path = path:gsub("oil://", "  ")
             return "  " .. vim.fn.fnamemodify(path, ":.")
         end
 
@@ -41,7 +41,7 @@ return {
                 end,
             },
             float = {
-                padding = 4,
+                padding = 2,
                 max_width = 0,
                 max_height = 0,
                 border = "rounded",

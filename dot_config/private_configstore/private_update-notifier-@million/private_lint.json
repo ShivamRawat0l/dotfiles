@@ -1,0 +1,10 @@
+{
+	"optOut": false,
+	"lastUpdateCheck": 1733655110074,
+	"update": {
+		"latest": "1.0.13",
+		"current": "1.0.12",
+		"type": "patch",
+		"name": "@million/lint"
+	}
+}
