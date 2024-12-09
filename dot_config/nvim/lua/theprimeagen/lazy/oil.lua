@@ -68,7 +68,7 @@ return {
                 [";"] = "actions.select",
                 ["<C-v>"] = { "actions.select", opts = { vertical = true } },
                 ["<C-h>"] = { "actions.select", opts = { horizontal = true } },
-                ["<C-p>"] = "actions.preview",
+                --["<C-p>"] = "actions.preview",
                 ["<C-c>"] = { "actions.close", mode = "n" },
                 ["<C-l>"] = "actions.refresh",
                 ["-"] = { "actions.parent", mode = "n" },
