@@ -7,9 +7,9 @@ offset.y = 4
 [window]
 dynamic_title = true
 decorations = "none"
-padding.x = 20
+padding.x = 0
 padding.y = 0
-dynamic_padding = false
+dynamic_padding = true
 startup_mode = "SimpleFullscreen"
 opacity = 0.98
 
