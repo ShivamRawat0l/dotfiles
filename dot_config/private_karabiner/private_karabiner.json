@@ -22,6 +22,14 @@
                         "vendor_id": 1008
                     },
                     "ignore": false
+                },
+                {
+                    "identifiers": {
+                        "is_keyboard": true,
+                        "product_id": 21315,
+                        "vendor_id": 16972
+                    },
+                    "ignore": true
                 }
             ],
             "name": "Default profile",
