@@ -142,7 +142,8 @@ PATH=~/.console-ninja/.bin:$PATH
 . "/Users/shivamrawat/.deno/env"
 # Initialize zsh completions (added by deno install script)
 autoload -Uz compinit
-preexec() { print -Pn "\e]0;$1%~\a" }
+#preexec() { print -Pn "\e]0;$1%~\a" }
+preexec() { print -Pn "\e]0;$1%" }
 
 compinit
 export LC_ALL=en_US.UTF-8
