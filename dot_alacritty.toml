@@ -6,10 +6,10 @@ offset.y = 4
 
 [window]
 dynamic_title = true
-decorations = "transparent"
+decorations = "none"
 padding.x = 20
-padding.y = 30
-dynamic_padding = true
+padding.y = 0
+dynamic_padding = false
 startup_mode = "SimpleFullscreen"
 opacity = 0.98
 
