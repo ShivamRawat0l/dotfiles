@@ -27,17 +27,18 @@ return {
                     StatusLine = { bg = color },
                     StatusLineNC = { bg = color },
                     -- Floating windows
-                    FloatBorder = { bg = color },
-                    NormalFloat = { bg = color },
+                    ColorColumn = { bg = color },
+                    NormalFloat = { bg = color, link = "Normal" },
+                    Float = { bg = color },
                     -- Popup menu
                     Pmenu = { bg = color },
-                    --PmenuSel = { bg = color},
+                    PmenuSel = { bg = color },
                     -- Completion menu
                     CmpDocumentationBorder = { bg = color },
                     CmpDocumentation = { bg = color },
                     -- Sidebar and tree-like views
-                    --LineNr = { bg = '#000000' },
-                    --CursorLineNr = { bg = '#000000' },
+                    LineNr = { bg = '#000000' },
+                    CursorLineNr = { bg = '#000000' },
                     -- Telescope and other plugin-specific backgrounds
                     TelescopeBorder = { bg = color },
                     TelescopeNormal = { bg = color },
@@ -58,8 +59,8 @@ return {
                     NvimTreeWinSeparator = { bg = color },
 
                     -- Ensure scrolling background is black
-                    --EndOfBuffer = { bg = color},
-                    --MsgArea = { bg = color}
+                    EndOfBuffer = { bg = color },
+                    MsgArea = { bg = color }
                 }
             })
             require("onedark").load()

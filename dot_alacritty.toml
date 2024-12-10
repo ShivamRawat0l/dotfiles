@@ -3,7 +3,7 @@ size = 18.0
 normal.family = "JetBrainsMono Nerd Font"
 offset.y = 4
 builtin_box_drawing = true
-glyph_offset.y = 1
+glyph_offset.y = 2
 glyph_offset.x = -1
 
 

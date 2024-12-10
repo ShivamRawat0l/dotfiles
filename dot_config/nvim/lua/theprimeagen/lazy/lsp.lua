@@ -11,6 +11,7 @@ return {
         "L3MON4D3/LuaSnip",
         "saadparwaiz1/cmp_luasnip",
         "j-hui/fidget.nvim",
+        "onsails/lspkind.nvim",
     },
 
     config = function()
@@ -48,7 +49,6 @@ return {
                 end,
 
                 zls = function()
-                    local lspconfig = require("lspconfig")
                     lspconfig.zls.setup({
                         root_dir = lspconfig.util.root_pattern(".git", "build.zig", "zls.json"),
                         settings = {
@@ -63,7 +63,6 @@ return {
                     vim.g.zig_fmt_autosave = 0
                 end,
                 ["lua_ls"] = function()
-                    local lspconfig = require("lspconfig")
                     lspconfig.lua_ls.setup {
                         capabilities = capabilities,
                         settings = {
@@ -80,7 +79,7 @@ return {
         })
 
         local cmp_select = { behavior = cmp.SelectBehavior.Select }
-
+        local lspkind = require("lspkind")
         cmp.setup({
             snippet = {
                 expand = function(args)
@@ -97,12 +96,51 @@ return {
                 { name = 'nvim_lsp' },
                 { name = 'luasnip' }, -- For luasnip users.
             }, {
+                { name = 'path' },
                 { name = 'buffer' },
-            })
+            }),
+            formatting = {
+                format = lspkind.cmp_format({
+                    ellipsis_char = "...",
+                    with_text = true,
+                    before = function(entry, vim_item)
+                        local item = entry:get_completion_item()
+
+                        if entry.source.name == 'nvim_lsp' then
+                            if not vim_item.menu and item.detail then
+                                vim_item.menu = item.detail
+                            end
+                        end
+
+                        if not vim_item.menu then
+                            vim_item.menu = ({
+                                buffer = "[buf]",
+                                nvim_lsp = "[LSP]",
+                                luasnip = "[snip]",
+                                path = "[path]",
+                                nvim_lua = "[api]",
+                            })[entry.source.name]
+                        end
+                        return vim_item
+                    end,
+                })
+            },
+            window = {
+                documentation = {
+                    border = "rounded",
+                    max_width = 120,
+                    max_height = 50,
+                    winhighlight = "Normal:Pmenu,FloatBorder:Pmenu,Search:None",
+                },
+                completion = {
+                    border = "rounded",
+                    winhighlight = "Normal:Pmenu,FloatBorder:Pmenu,CursorLine:PmenuSel,Search:None",
+                },
+            },
         })
 
         vim.diagnostic.config({
-            -- update_in_insert = true,
+            update_in_insert = true,
             float = {
                 focusable = false,
                 style = "minimal",
