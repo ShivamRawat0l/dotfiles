@@ -3,7 +3,7 @@ function ColorMyPencils(color)
     vim.cmd.colorscheme(color)
 end
 
-local color = "#0a0a0a"
+local color = "#000000"
 return {
     {
         "navarasu/onedark.nvim",
@@ -12,15 +12,16 @@ return {
             require("onedark").setup({
                 style = "darker",
                 transparent = true,
+                term_colors = true,
                 -- Lualine options --
                 lualine = {
-                    transparent = false, -- lualine center bar transparency
+                    transparent = true, -- lualine center bar transparency
                 },
 
                 highlights = {
 
-                    --Normal = { bg = '#000000' },
-                    --NormalNC = { bg = '#000000' },
+                    Normal = { bg = '#000000' },
+                    NormalNC = { bg = '#000000' },
                     -- Optionally, set other background-related highlights to black
                     SignColumn = { bg = color },
                     StatusLine = { bg = color },
@@ -43,6 +44,7 @@ return {
                     TelescopePromptBorder = { bg = color },
                     TelescopeResultsBorder = { bg = color },
                     TelescopePreviewBorder = { bg = color },
+
                     -- Mini.files and other file explorers,
                     MiniFilesBorder = { bg = color },
                     MiniFilesNormal = { bg = color },

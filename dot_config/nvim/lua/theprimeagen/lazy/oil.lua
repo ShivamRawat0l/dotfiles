@@ -41,7 +41,7 @@ return {
                 end,
             },
             float = {
-                padding = 2,
+                padding = 0,
                 max_width = 0,
                 max_height = 0,
                 border = "rounded",
