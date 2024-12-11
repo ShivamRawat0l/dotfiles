@@ -53,9 +53,8 @@ vim.keymap.set("n", "t1", ":tabmove 0<CR>", { silent = true })
 vim.keymap.set("n", "t2", ":tabmove 2<CR>", { silent = true })
 vim.keymap.set("n", "t3", ":tabmove 3<CR>", { silent = true })
 vim.keymap.set("n", "t4", ":tabmove 4<CR>", { silent = true })
-vim.keymap.set({ "n", "i" }, "<C-s>", "<Esc><leader>f:w<CR>",
-    { expr = false, silent = true, noremap = false, remap = true })
 -- For use default preset and it work with dot
+--
 
 vim.keymap.set("n", "<leader><leader>", function()
     vim.cmd("so")

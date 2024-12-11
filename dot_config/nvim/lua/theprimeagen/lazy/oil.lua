@@ -42,6 +42,7 @@ return {
                 end,
             },
             float = {
+                padding = 0,
                 max_width = 0,
                 max_height = 0,
                 border = "rounded",
@@ -71,7 +72,7 @@ return {
                 ["<C-v>"] = { "actions.select", opts = { vertical = true } },
                 ["<C-h>"] = { "actions.select", opts = { horizontal = true } },
                 --["<C-p>"] = "actions.preview",
-                ["<C-c>"] = { "actions.close", mode = "n" },
+                ["q"] = { "actions.close", mode = "n" },
                 ["<C-l>"] = "actions.refresh",
                 ["-"] = { "actions.parent", mode = "n" },
                 ["_"] = { "actions.open_cwd", mode = "n" },
