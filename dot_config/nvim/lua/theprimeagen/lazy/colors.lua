@@ -30,6 +30,7 @@ return {
                     ColorColumn = { bg = color },
                     NormalFloat = { bg = color, link = "Normal" },
                     Float = { bg = color },
+                    FloatBorder = { bg = color },
                     -- Popup menu
                     Pmenu = { bg = color },
                     PmenuSel = { bg = color },

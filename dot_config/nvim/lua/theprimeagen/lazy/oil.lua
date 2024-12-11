@@ -19,6 +19,7 @@ return {
             win_options = {
                 wrap = true,
                 winbar = "%{v:lua.CustomOilBar()}",
+                winhl = "Normal:Normal,Float:Float,FloatBorder:FloatBorder",
             },
             columns = {
                 "icon",
@@ -41,12 +42,11 @@ return {
                 end,
             },
             float = {
-                padding = 0,
                 max_width = 0,
                 max_height = 0,
                 border = "rounded",
                 win_options = {
-                    winblend = 0,
+                    winblend = 1,
                 },
                 get_win_title = nil,
                 preview_split = "right",
@@ -60,7 +60,9 @@ return {
                 disable_preview = function(_)
                     return false
                 end,
-                win_options = {},
+                win_options = {
+                    winhl = "Normal:Normal,Float:Float,FloatBorder:FloatBorder",
+                },
             },
             keymaps = {
                 ["g?"] = { "actions.show_help", mode = "n" },
