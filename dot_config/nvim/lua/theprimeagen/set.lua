@@ -30,4 +30,4 @@ vim.opt.isfname:append("@-@")
 vim.opt.updatetime = 50
 
 vim.opt.colorcolumn = "100,200"
-vim.opt.cursorline = false
+vim.opt.cursorlineopt = 'number'

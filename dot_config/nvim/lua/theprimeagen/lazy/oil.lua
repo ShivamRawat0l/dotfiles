@@ -42,7 +42,7 @@ return {
                 end,
             },
             float = {
-                padding = 0,
+                padding = 2,
                 max_width = 0,
                 max_height = 0,
                 border = "rounded",
@@ -86,12 +86,15 @@ return {
         })
         vim.keymap.set('n', '-', function()
             local oil = require("oil")
-            oil.open_float()
+            oil.open()
             vim.wait(500, function()
                 return oil.get_cursor_entry() ~= nil
             end)
             if oil.get_cursor_entry() then
-                oil.open_preview()
+                oil.open_preview({
+                    vertical = true,
+                    split = "botright"
+                })
             end
         end)
     end

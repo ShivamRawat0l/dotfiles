@@ -3,7 +3,7 @@ let s:so_save = &g:so | let s:siso_save = &g:siso | setg so=0 siso=0 | setl so=-
 let v:this_session=expand("<sfile>:p")
 silent only
 silent tabonly
-cd ~/Developer
+cd ~/.config/nvim/lua/theprimeagen
 if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
@@ -13,15 +13,30 @@ if &shortmess =~ 'A'
 else
   set shortmess=aoO
 endif
-badd +8 ~/.config/nvim/lua/theprimeagen/session.lua
-badd +1 ~/.config/nvim/lua/theprimeagen/
-badd +6 ~/.config/nvim/lua/theprimeagen/lazy_init.lua
-badd +5 ~/.config/nvim/lua/theprimeagen/init.lua
-badd +2 ~/.config/nvim/lua/theprimeagen/terminal.lua
+badd +1 ~/.config/nvim/lua/theprimeagen
+badd +53 ~/.config/nvim/lua/theprimeagen/session.lua
+badd +1 ~/.config/nvim/lua/theprimeagen/lazy/nvim-neo.lua
+badd +8 ~/.config/nvim/lua/theprimeagen/lazy/cheatcode.lua
+badd +13 ~/.config/nvim/lua/theprimeagen/remap.lua
+badd +32 ~/.config/nvim/lua/theprimeagen/set.lua
+badd +3 ~/.config/nvim/lua/theprimeagen/lazy/mini.surround.lua
+badd +9 ~/.config/nvim/lua/theprimeagen/lazy/flash.lua
+badd +62 ~/.config/nvim/lua/theprimeagen/init.lua
+badd +1 ~/.config/nvim/lua/theprimeagen/lazy/treesitter.lua
+badd +16 ~/.config/nvim/lua/theprimeagen/lazy/telescope.lua
+badd +95 ~/.config/nvim/lua/theprimeagen/lazy/oil.lua
+badd +17 ~/.config/nvim/lua/theprimeagen/lazy_init.lua
+badd +1 ~/.config/nvim/lua/theprimeagen/lazy/no-neck-pain.lua
+badd +22 ~/.config/nvim/lua/theprimeagen/terminal.lua
+badd +16 ~/.config/nvim/lua/theprimeagen/lazy/snippets.lua
+badd +4 ~/.config/nvim/lua/theprimeagen/lazy/prettier.lua
+badd +1 ~/.config/nvim/lua/theprimeagen/lazy/nvim-autopairs.lua
+badd +1 ~/.config/nvim/lua/theprimeagen/lazy/noice.lua
+badd +29 ~/.config/nvim/lua/theprimeagen/lazy/colors.lua
 argglobal
 %argdel
-$argadd ~/.config/nvim/lua/theprimeagen/
-edit ~/.config/nvim/lua/theprimeagen/session.lua
+$argadd ~/.config/nvim/lua/theprimeagen
+edit ~/.config/nvim/lua/theprimeagen/lazy/telescope.lua
 wincmd t
 let s:save_winminheight = &winminheight
 let s:save_winminwidth = &winminwidth
@@ -30,6 +45,7 @@ set winheight=1
 set winminwidth=0
 set winwidth=1
 argglobal
+balt ~/.config/nvim/lua/theprimeagen/lazy/no-neck-pain.lua
 setlocal fdm=manual
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -40,12 +56,12 @@ setlocal fdn=20
 setlocal fen
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 9 - ((8 * winheight(0) + 25) / 50)
+let s:l = 16 - ((15 * winheight(0) + 23) / 47)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 9
-normal! 011|
+keepjumps 16
+normal! 038|
 tabnext 1
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0 && getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'
   silent exe 'bwipe ' . s:wipebuf
@@ -60,7 +76,6 @@ if filereadable(s:sx)
   exe "source " . fnameescape(s:sx)
 endif
 let &g:so = s:so_save | let &g:siso = s:siso_save
-nohlsearch
 doautoall SessionLoadPost
 unlet SessionLoad
 " vim: set ft=vim :

@@ -19,7 +19,12 @@ return {
                 },
 
                 highlights = {
-
+                    TroubleNormal = { bg = "#000000" },
+                    DiagnosticVirtualText = { bg = "#000000" },
+                    DiagnosticVirtualTextError = { bg = "#000000" },
+                    DiagnosticVirtualTextWarn = { bg = "#000000" },
+                    DiagnosticVirtualTextInfo = { bg = "#000000" },
+                    DiagnosticVirtualTextHint = { bg = "#000000" },
                     Normal = { bg = '#000000' },
                     NormalNC = { bg = '#000000' },
                     -- Optionally, set other background-related highlights to black

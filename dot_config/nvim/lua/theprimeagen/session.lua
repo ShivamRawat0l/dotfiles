@@ -25,12 +25,29 @@ vim.api.nvim_create_autocmd("VimEnter", {
 })
 
 print("Session file: " .. get_startup_path() .. "/.session")
+
+local function format_file()
+    vim.cmd('stopinsert')
+    vim.lsp.buf.format()
+end
+
+local function save_file()
+    vim.cmd('write')
+end
+
 if get_startup_path() == "" then
-    vim.keymap.set({ "n", "i" }, "<C-s>",
-        "<Esc><leader>f:w<CR>",
-        { expr = false, silent = true, noremap = true, remap = true })
+    vim.keymap.set({ "n", "i" }, "<C-s>", function()
+        if vim.bo.modified then
+            format_file()
+            save_file()
+        end
+    end, { expr = false, silent = true, noremap = true, remap = true })
 else
-    vim.keymap.set({ "n", "i" }, "<C-s>",
-        "<Esc><leader>f:w<CR>:mksession! " .. get_startup_path() .. "/.session" .. "<CR>",
-        { expr = false, silent = true, noremap = true, remap = true })
+    vim.keymap.set({ "n", "i" }, "<C-s>", function()
+        if vim.bo.modified then
+            format_file()
+            save_file()
+            vim.cmd("mksession! " .. get_startup_path() .. "/.session")
+        end
+    end, { expr = false, silent = true, noremap = true, remap = true })
 end
