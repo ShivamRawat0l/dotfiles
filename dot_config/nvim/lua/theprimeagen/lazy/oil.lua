@@ -67,35 +67,21 @@ return {
             },
             keymaps = {
                 ["g?"] = { "actions.show_help", mode = "n" },
-                ["<CR>"] = "actions.select",
                 [";"] = "actions.select",
                 ["<C-v>"] = { "actions.select", opts = { vertical = true } },
                 ["<C-h>"] = { "actions.select", opts = { horizontal = true } },
-                --["<C-p>"] = "actions.preview",
+                ["<C-p>"] = "actions.preview",
                 ["q"] = { "actions.close", mode = "n" },
                 ["<C-l>"] = "actions.refresh",
-                ["-"] = { "actions.parent", mode = "n" },
-                ["_"] = { "actions.open_cwd", mode = "n" },
-                ["`"] = { "actions.cd", mode = "n" },
                 ["gs"] = { "actions.change_sort", mode = "n" },
                 ["gx"] = "actions.open_external",
                 ["g."] = { "actions.toggle_hidden", mode = "n" },
-                ["g\\"] = { "actions.toggle_trash", mode = "n" },
             },
             use_default_keymaps = false,
         })
         vim.keymap.set('n', '-', function()
             local oil = require("oil")
             oil.open()
-            vim.wait(500, function()
-                return oil.get_cursor_entry() ~= nil
-            end)
-            if oil.get_cursor_entry() then
-                oil.open_preview({
-                    vertical = true,
-                    split = "botright"
-                })
-            end
         end)
     end
 }
