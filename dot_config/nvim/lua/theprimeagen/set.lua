@@ -1,6 +1,7 @@
 vim.opt.smartindent = true
 vim.opt.autoindent = true
 
+
 vim.opt.nu = true
 vim.opt.relativenumber = true
 
