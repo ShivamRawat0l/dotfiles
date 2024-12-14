@@ -66,6 +66,7 @@ return {
 				},
 			},
 			keymaps = {
+				["-"] = nil,
 				["g?"] = { "actions.show_help", mode = "n" },
 				[";"] = "actions.select",
 				["<C-v>"] = { "actions.select", opts = { vertical = true } },
@@ -78,7 +79,7 @@ return {
 			},
 			use_default_keymaps = false,
 		})
-		vim.keymap.set('n', '-', function()
+		vim.keymap.set('n', '=', function()
 			local oil = require("oil")
 			oil.open()
 		end)

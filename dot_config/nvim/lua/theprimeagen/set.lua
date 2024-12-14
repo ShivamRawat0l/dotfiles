@@ -28,9 +28,9 @@ vim.opt.updatetime = 50
 vim.opt.colorcolumn = "100"
 vim.opt.cursorlineopt = 'number'
 
-vim.opt.list = true
-vim.opt.listchars:append("space: ")
-vim.opt.listchars:append("tab:→ ")
+		vim.opt.list = true
+	vim.opt.listchars = { eol = '↵', tab = "⤍ ", space = " " }
+
 vim.opt.shiftwidth = 4
 vim.opt.tabstop = 4
 vim.opt.expandtab = false
