@@ -30,7 +30,17 @@ vim.keymap.set("i", "<C-c>", "<Esc>")
 vim.keymap.set("n", "Q", "<nop>")
 vim.keymap.set("n", "<C-f>", "<cmd>silent !tmux neww tmux-sessionizer<CR>")
 
-vim.keymap.set("n", "<leader>f", vim.lsp.buf.format)
+vim.keymap.set("n", "<leader>f", function()
+    vim.lsp.buf.format({
+        formatting_options = {
+            tabSize = 4,
+            insertSpaces = false,
+            trimTrailingWhitespace = true,
+            insertFinalNewline = true,
+            trimFinalNewlines = true,
+        },
+    })
+end)
 
 vim.keymap.set("n", "<C-k>", "<cmd>cnext<CR>zz")
 vim.keymap.set("n", "<C-j>", "<cmd>cprev<CR>zz")
@@ -53,9 +63,3 @@ vim.keymap.set("n", "t1", ":tabmove 0<CR>", { silent = true })
 vim.keymap.set("n", "t2", ":tabmove 2<CR>", { silent = true })
 vim.keymap.set("n", "t3", ":tabmove 3<CR>", { silent = true })
 vim.keymap.set("n", "t4", ":tabmove 4<CR>", { silent = true })
--- For use default preset and it work with dot
---
-
-vim.keymap.set("n", "<leader><leader>", function()
-    vim.cmd("so")
-end)

@@ -1,83 +1,112 @@
-function ColorMyPencils(color)
-    color = color or "onedark"
-    vim.cmd.colorscheme(color)
+function ColorMyPencils(theme)
+	theme = "everforest"
+	vim.cmd.colorscheme(theme)
+	if true then
+		local color = "none"
+		--vim.api.nvim_set_hl(0, "Visual", { bg = "#264f78" });
+		vim.api.nvim_set_hl(0, "TroubleNormal", { bg = color });
+		vim.api.nvim_set_hl(0, "DiagnosticVirtualText", { bg = color });
+		vim.api.nvim_set_hl(0, "DiagnosticVirtualTextError", { bg = color });
+		vim.api.nvim_set_hl(0, "DiagnosticVirtualTextWarn", { bg = color });
+		vim.api.nvim_set_hl(0, "DiagnosticVirtualTextInfo", { bg = color });
+		vim.api.nvim_set_hl(0, "DiagnosticVirtualTextHint", { bg = color });
+		vim.api.nvim_set_hl(0, "Normal", { bg = color }); -- this is the background color of the editor
+		vim.api.nvim_set_hl(0, "NormalFloat", { bg = color })
+		vim.api.nvim_set_hl(0, "ColorColumn", { bg = "#020401" });
+		vim.api.nvim_set_hl(0, "NormalNC", { bg = color });
+		vim.api.nvim_set_hl(0, "SignColumn", { bg = color });
+		vim.api.nvim_set_hl(0, "StatusLine", { bg = color, fg = color });
+		vim.api.nvim_set_hl(0, "StatusLineNC", { bg = color, fg = color });
+		vim.api.nvim_set_hl(0, "ColorColumn", { bg = color });
+		vim.api.nvim_set_hl(0, "NormalFloat", { bg = color, link = "Normal" });
+		vim.api.nvim_set_hl(0, "Float", { bg = color });
+		vim.api.nvim_set_hl(0, "FloatBorder", { bg = color });
+		vim.api.nvim_set_hl(0, "Pmenu", { bg = color });
+		--vim.api.nvim_set_hl(0, "PmenuSel", { bg = color }); -- this is the background color of the selected item in the popup menu
+		vim.api.nvim_set_hl(0, "CmpDocumentationBorder", { bg = color });
+		vim.api.nvim_set_hl(0, "CmpDocumentation", { bg = color });
+		vim.api.nvim_set_hl(0, "LineNr", { bg = color });
+		vim.api.nvim_set_hl(0, "CursorLineNr", { bg = color });
+		vim.api.nvim_set_hl(0, "TelescopeBorder", { bg = color });
+		vim.api.nvim_set_hl(0, "TelescopeNormal", { bg = color });
+		vim.api.nvim_set_hl(0, "TelescopePromptBorder", { bg = color });
+		vim.api.nvim_set_hl(0, "TelescopeResultsBorder", { bg = color });
+		vim.api.nvim_set_hl(0, "TelescopePreviewBorder", { bg = color });
+		vim.api.nvim_set_hl(0, "MiniFilesBorder", { bg = color });
+		vim.api.nvim_set_hl(0, "MiniFilesNormal", { bg = color });
+		vim.api.nvim_set_hl(0, "VertSplit", { bg = color });
+		vim.api.nvim_set_hl(0, "ScrollbarSlider", { bg = color });
+		vim.api.nvim_set_hl(0, "NvimTreeNormal", { bg = color });
+		vim.api.nvim_set_hl(0, "NvimTreeWinSeparator", { bg = color });
+		vim.api.nvim_set_hl(0, "EndOfBuffer", { bg = color });
+		vim.api.nvim_set_hl(0, "MsgArea", { bg = color });
+	end
 end
 
-local color = "#000000"
 return {
-    {
-        "navarasu/onedark.nvim",
-        name = "onedark",
-        config = function()
-            require("onedark").setup({
-                style = "darker",
-                transparent = true,
-                term_colors = true,
-                -- Lualine options --
-                lualine = {
-                    transparent = true, -- lualine center bar transparency
-                },
+	{
+		"catppuccin/nvim",
+		name = "catppuccin",
+		priority = 1000
+	},
 
-                highlights = {
-                    TroubleNormal = { bg = "#000000" },
-                    DiagnosticVirtualText = { bg = "#000000" },
-                    DiagnosticVirtualTextError = { bg = "#000000" },
-                    DiagnosticVirtualTextWarn = { bg = "#000000" },
-                    DiagnosticVirtualTextInfo = { bg = "#000000" },
-                    DiagnosticVirtualTextHint = { bg = "#000000" },
-                    Normal = { bg = '#000000' },
-                    NormalNC = { bg = '#000000' },
-                    -- Optionally, set other background-related highlights to black
-                    SignColumn = { bg = color },
-                    StatusLine = { bg = color },
-                    StatusLineNC = { bg = color },
-                    -- Floating windows
-                    ColorColumn = { bg = color },
-                    NormalFloat = { bg = color, link = "Normal" },
-                    Float = { bg = color },
-                    FloatBorder = { bg = color },
-                    -- Popup menu
-                    Pmenu = { bg = color },
-                    PmenuSel = { bg = color },
-                    -- Completion menu
-                    CmpDocumentationBorder = { bg = color },
-                    CmpDocumentation = { bg = color },
-                    -- Sidebar and tree-like views
-                    LineNr = { bg = '#000000' },
-                    CursorLineNr = { bg = '#000000' },
-                    -- Telescope and other plugin-specific backgrounds
-                    TelescopeBorder = { bg = color },
-                    TelescopeNormal = { bg = color },
-                    TelescopePromptBorder = { bg = color },
-                    TelescopeResultsBorder = { bg = color },
-                    TelescopePreviewBorder = { bg = color },
-
-                    -- Mini.files and other file explorers,
-                    MiniFilesBorder = { bg = color },
-                    MiniFilesNormal = { bg = color },
-
-                    -- Vertical split and scrollbar
-                    VertSplit = { bg = color },
-                    ScrollbarSlider = { bg = color },
-
-                    -- Specific plugin backgrounds
-                    NvimTreeNormal = { bg = color },
-                    NvimTreeWinSeparator = { bg = color },
-
-                    -- Ensure scrolling background is black
-                    EndOfBuffer = { bg = color },
-                    MsgArea = { bg = color }
-                }
-            })
-            require("onedark").load()
-        end
-    },
-    {
-        "neanias/everforest-nvim",
-        name = "everforestz",
-        config = function()
-            require("everforest").setup({
-            })
-        end,
-    },
+	{
+		"craftzdog/solarized-osaka.nvim",
+		lazy = false,
+		priority = 1000,
+		opts = {},
+	},
+	{
+		"tiagovla/tokyodark.nvim",
+		opts = {
+		},
+		config = function(_, opts)
+			require("tokyodark").setup(opts) -- calling setup is optional
+			vim.cmd [[colorscheme tokyodark]]
+		end,
+	},
+	{ "EdenEast/nightfox.nvim" },
+	{
+		'glepnir/zephyr-nvim',
+		name = 'zephyr',
+		lazy = false,
+		priority = 1000,
+	},
+	{
+		'uloco/bluloco.nvim',
+		lazy = false,
+		priority = 1000,
+		dependencies = { 'rktjmp/lush.nvim' },
+		config = function()
+			-- your optional config goes here, see below.
+		end,
+	},
+	{
+		"sho-87/kanagawa-paper.nvim",
+		lazy = false,
+		priority = 1000,
+		opts = {},
+	},
+	{
+		"navarasu/onedark.nvim",
+		name = "onedark",
+		config = function()
+			require("onedark").setup({
+				style = "darker",
+				lualine = {
+					transparent = true, -- lualine center bar transparency
+				},
+				highlights = {}
+			})
+			require("onedark").load()
+		end
+	},
+	{
+		"neanias/everforest-nvim",
+		name = "everforestz",
+		config = function()
+			require("everforest").setup({
+			})
+		end,
+	},
 }
