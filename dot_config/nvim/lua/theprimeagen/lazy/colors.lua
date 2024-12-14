@@ -23,6 +23,10 @@ function ColorMyPencils(theme)
 		vim.api.nvim_set_hl(0, "FloatBorder", { bg = color });
 		vim.api.nvim_set_hl(0, "Pmenu", { bg = color });
 		--vim.api.nvim_set_hl(0, "PmenuSel", { bg = color }); -- this is the background color of the selected item in the popup menu
+		--
+		vim.api.nvim_set_hl(0, "NeoTreeNormalNC", { bg = color });
+		vim.api.nvim_set_hl(0, "NeoTreeEndOfBuffer", { bg = color });
+		vim.api.nvim_set_hl(0, "NeoTreeNormal", { bg = color });
 		vim.api.nvim_set_hl(0, "CmpDocumentationBorder", { bg = color });
 		vim.api.nvim_set_hl(0, "CmpDocumentation", { bg = color });
 		vim.api.nvim_set_hl(0, "LineNr", { bg = color });

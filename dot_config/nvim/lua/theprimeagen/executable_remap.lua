@@ -31,15 +31,15 @@ vim.keymap.set("n", "Q", "<nop>")
 vim.keymap.set("n", "<C-f>", "<cmd>silent !tmux neww tmux-sessionizer<CR>")
 
 vim.keymap.set("n", "<leader>f", function()
-    vim.lsp.buf.format({
-        formatting_options = {
-            tabSize = 4,
-            insertSpaces = false,
-            trimTrailingWhitespace = true,
-            insertFinalNewline = true,
-            trimFinalNewlines = true,
-        },
-    })
+	vim.lsp.buf.format({
+		formatting_options = {
+			tabSize = 4,
+			insertSpaces = false,
+			trimTrailingWhitespace = true,
+			insertFinalNewline = true,
+			trimFinalNewlines = true,
+		},
+	})
 end)
 
 vim.keymap.set("n", "<C-k>", "<cmd>cnext<CR>zz")
@@ -51,9 +51,9 @@ vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><
 vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
 
 vim.keymap.set(
-    "n",
-    "<leader>ee",
-    "oif err != nil {<CR>}<Esc>Oreturn err<Esc>"
+	"n",
+	"<leader>ee",
+	"oif err != nil {<CR>}<Esc>Oreturn err<Esc>"
 )
 
 vim.keymap.set("n", "<leader>vpp", "<cmd>e ~/.dotfiles/nvim/.config/nvim/lua/theprimeagen/packer.lua<CR>");
@@ -63,3 +63,4 @@ vim.keymap.set("n", "t1", ":tabmove 0<CR>", { silent = true })
 vim.keymap.set("n", "t2", ":tabmove 2<CR>", { silent = true })
 vim.keymap.set("n", "t3", ":tabmove 3<CR>", { silent = true })
 vim.keymap.set("n", "t4", ":tabmove 4<CR>", { silent = true })
+vim.keymap.set("n", "=", ":Neotree source=filesystem reveal=true<CR>", { silent = true })

@@ -3,7 +3,7 @@ let s:so_save = &g:so | let s:siso_save = &g:siso | setg so=0 siso=0 | setl so=-
 let v:this_session=expand("<sfile>:p")
 silent only
 silent tabonly
-cd ~/.config/nvim/lua/theprimeagen
+cd ~/.config
 if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
@@ -13,34 +13,16 @@ if &shortmess =~ 'A'
 else
   set shortmess=aoO
 endif
-badd +1 ~/.config/nvim/lua/theprimeagen
-badd +53 session.lua
-badd +140 lazy/lsp.lua
-badd +5 lazy/snipe.lua
-badd +6 lazy/snipe-lsp.lua
-badd +28 lazy/colors.lua
-badd +12 init.lua
-badd +64 remap.lua
-badd +28 set.lua
-badd +1 lazy/lualine.lua
-badd +1 .session
-badd +1 lazy/copilot.lua
-badd +80 lazy/oil.lua
-badd +2 lazy_init.lua
-badd +1 lazy/nvim-neo.lua
-badd +16 lazy/neo-tree.lua
-badd +1 terminal.lua
-badd +1 lazy/git-signs.lua
-badd +1 lazy/lazydev.lua
-badd +1 lazy/cloak.lua
-badd +1 lazy/flash.lua
-badd +1 neo-tree\ filesystem\ \[1]
-badd +2 lazy/harpoon.lua
-badd +1 lazy/noice.lua
+badd +34 ~/.config/nvim/lua/theprimeagen/set.lua
+badd +41 ~/.config/nvim/lua/theprimeagen/remap.lua
+badd +7 ~/.config/nvim/lua/theprimeagen/lazy/flash.lua
+badd +10 ~/.config/nvim/lua/theprimeagen/lazy/mini.surround.lua
+badd +1 ~/.config/nvim/lua/theprimeagen/
+badd +19 ~/.config/nvim/lua/theprimeagen/lazy/lualine.lua
 argglobal
 %argdel
-$argadd ~/.config/nvim/lua/theprimeagen
-edit lazy/neo-tree.lua
+$argadd ~/.config/nvim/lua/theprimeagen/
+edit ~/.config/nvim/lua/theprimeagen/lazy/lualine.lua
 wincmd t
 let s:save_winminheight = &winminheight
 let s:save_winminwidth = &winminwidth
@@ -49,7 +31,7 @@ set winheight=1
 set winminwidth=0
 set winwidth=1
 argglobal
-balt lazy/nvim-neo.lua
+balt ~/.config/nvim/lua/theprimeagen/
 setlocal fdm=manual
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -60,13 +42,12 @@ setlocal fdn=20
 setlocal fen
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 16 - ((15 * winheight(0) + 23) / 46)
+let s:l = 19 - ((18 * winheight(0) + 24) / 49)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 16
-normal! 024|
-lcd ~/.config/nvim/lua/theprimeagen
+keepjumps 19
+normal! 031|
 tabnext 1
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0 && getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'
   silent exe 'bwipe ' . s:wipebuf
