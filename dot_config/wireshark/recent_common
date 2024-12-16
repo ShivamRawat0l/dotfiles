@@ -12,17 +12,23 @@
 
 ######## Recent display filters (latest last), cannot be altered through command line ########
 
+recent.display_filter: rpc
+recent.display_filter: grpc
+recent.display_filter: websocket
+recent.display_filter: tcp.port == 13004
+recent.display_filter: tcp.port == 12550
+recent.display_filter: tcp.port == 50051
 
 # Main window geometry.
 # Decimal numbers.
-gui.geometry_main_x: 657
-gui.geometry_main_y: 300
-gui.geometry_main_width: 1893
-gui.geometry_main_height: 1112
+gui.geometry_main_x: 0
+gui.geometry_main_y: 0
+gui.geometry_main_width: 2560
+gui.geometry_main_height: 1412
 
 # Main window maximized.
 # TRUE or FALSE (case-insensitive).
-gui.geometry_main_maximized: FALSE
+gui.geometry_main_maximized: TRUE
 
 # Leftalign Action Buttons.
 # TRUE or FALSE (case-insensitive).
@@ -66,6 +72,24 @@ gui.search_case_sensitive: FALSE
 # Find packet search type.
 # One of: DISPLAY_FILTER, HEX_VALUE, STRING, REGEX
 gui.search_type: DISPLAY_FILTER
+
+# Geometry and maximized state of PacketDialog window.
+# Decimal integers.
+gui.geom.PacketDialog.x: 543
+gui.geom.PacketDialog.y: 400
+gui.geom.PacketDialog.width: 1514
+gui.geom.PacketDialog.height: 889
+# TRUE or FALSE (case-insensitive).
+gui.geom.PacketDialog.maximized: FALSE
+
+# Geometry and maximized state of PreferencesDialog window.
+# Decimal integers.
+gui.geom.PreferencesDialog.x: 971
+gui.geom.PreferencesDialog.y: 618
+gui.geom.PreferencesDialog.width: 680
+gui.geom.PreferencesDialog.height: 521
+# TRUE or FALSE (case-insensitive).
+gui.geom.PreferencesDialog.maximized: FALSE
 
 # Custom colors.
 # List of custom colors selected in Qt color picker.

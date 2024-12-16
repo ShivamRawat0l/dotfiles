@@ -2,21 +2,21 @@ function ColorMyPencils(theme)
 	theme = "everforest"
 	vim.cmd.colorscheme(theme)
 	if true then
-		local color = "none"
+		local color = "#000000"
 		--vim.api.nvim_set_hl(0, "Visual", { bg = "#264f78" });
 		vim.api.nvim_set_hl(0, "TroubleNormal", { bg = color });
-		vim.api.nvim_set_hl(0, "DiagnosticVirtualText", { bg = color });
-		vim.api.nvim_set_hl(0, "DiagnosticVirtualTextError", { bg = color });
-		vim.api.nvim_set_hl(0, "DiagnosticVirtualTextWarn", { bg = color });
-		vim.api.nvim_set_hl(0, "DiagnosticVirtualTextInfo", { bg = color });
-		vim.api.nvim_set_hl(0, "DiagnosticVirtualTextHint", { bg = color });
+		--vim.api.nvim_set_hl(0, "DiagnosticVirtualText", { bg = color });
+		--vim.api.nvim_set_hl(0, "DiagnosticVirtualTextError", { bg = color });
+		--vim.api.nvim_set_hl(0, "DiagnosticVirtualTextWarn", { bg = color });
+		--vim.api.nvim_set_hl(0, "DiagnosticVirtualTextInfo", { bg = color });
+		--vim.api.nvim_set_hl(0, "DiagnosticVirtualTextHint", { bg = color });
 		vim.api.nvim_set_hl(0, "Normal", { bg = color }); -- this is the background color of the editor
 		vim.api.nvim_set_hl(0, "NormalFloat", { bg = color })
 		vim.api.nvim_set_hl(0, "ColorColumn", { bg = "#020401" });
 		vim.api.nvim_set_hl(0, "NormalNC", { bg = color });
 		vim.api.nvim_set_hl(0, "SignColumn", { bg = color });
-		vim.api.nvim_set_hl(0, "StatusLine", { bg = color, fg = color });
-		vim.api.nvim_set_hl(0, "StatusLineNC", { bg = color, fg = color });
+		vim.api.nvim_set_hl(0, "StatusLine", { bg = color, });
+		vim.api.nvim_set_hl(0, "StatusLineNC", { bg = color });
 		vim.api.nvim_set_hl(0, "ColorColumn", { bg = color });
 		vim.api.nvim_set_hl(0, "NormalFloat", { bg = color, link = "Normal" });
 		vim.api.nvim_set_hl(0, "Float", { bg = color });
@@ -24,8 +24,8 @@ function ColorMyPencils(theme)
 		vim.api.nvim_set_hl(0, "Pmenu", { bg = color });
 		--vim.api.nvim_set_hl(0, "PmenuSel", { bg = color }); -- this is the background color of the selected item in the popup menu
 		--
-		vim.api.nvim_set_hl(0, "NeoTreeNormalNC", { bg = color });
-		vim.api.nvim_set_hl(0, "NeoTreeEndOfBuffer", { bg = color });
+		vim.api.nvim_set_hl(0, "NvimTreeNormalNC", { bg = color });
+		vim.api.nvim_set_hl(0, "NvimTreeEndOfBuffer", { bg = color });
 		vim.api.nvim_set_hl(0, "NeoTreeNormal", { bg = color });
 		vim.api.nvim_set_hl(0, "CmpDocumentationBorder", { bg = color });
 		vim.api.nvim_set_hl(0, "CmpDocumentation", { bg = color });

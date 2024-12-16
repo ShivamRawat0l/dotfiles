@@ -6,18 +6,16 @@ local function my_on_attach(bufnr)
 	local function opts(desc)
 		return { desc = "nvim-tree: " .. desc, buffer = bufnr, noremap = true, silent = true, nowait = true }
 	end
-
-	-- default mappings
 	api.config.mappings.default_on_attach(bufnr)
-
-	-- custom mappings
 	vim.keymap.set('n', ';', api.node.open.edit, opts('Open'))
 	vim.keymap.set('n', 'l', api.node.open.edit, opts('Open'))
+	vim.keymap.set('n', '<C-y>', api.node.open.edit, opts('Open'))
 	vim.keymap.set('n', 'h', api.node.navigate.parent_close, opts('Up'))
+	vim.keymap.set('n', '-', api.node.navigate.parent_close, opts('Up'))
 end
 
-local HEIGHT_RATIO = 0.9 -- You can change this
-local WIDTH_RATIO = 0.9  -- You can change this too
+local HEIGHT_RATIO = 1
+local WIDTH_RATIO = 1
 
 return {
 	"nvim-tree/nvim-tree.lua",
