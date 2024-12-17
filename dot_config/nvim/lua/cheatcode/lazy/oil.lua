@@ -20,7 +20,15 @@ return {
 				wrap = true,
 				winbar = "%{v:lua.CustomOilBar()}",
 				winhl = "Normal:Normal,Float:Float,FloatBorder:FloatBorder",
+				spell = false,
+				list = true,
 			},
+			lsp_file_methods = {
+				enabled = true,
+				timeout_ms = 3000,
+				autosave_changes = true,
+			},
+			watch_for_changes = true,
 			columns = {
 				"icon",
 				"permissions",
@@ -80,7 +88,7 @@ return {
 			},
 			use_default_keymaps = false,
 		})
-		vim.keymap.set('n', '<C-->', function()
+		vim.keymap.set('n', '-', function()
 			local oil = require("oil")
 			oil.open()
 		end)

@@ -28,7 +28,6 @@ vim.keymap.set({ "n", "v" }, "<leader>d", [["_d]])
 vim.keymap.set("i", "<C-c>", "<Esc>")
 
 vim.keymap.set("n", "Q", "<nop>")
-vim.keymap.set("n", "<C-f>", "<cmd>silent !tmux neww tmux-sessionizer<CR>")
 
 vim.keymap.set("n", "<leader>f", function()
 	vim.lsp.buf.format({
@@ -50,18 +49,15 @@ vim.keymap.set("n", "<leader>j", "<cmd>lprev<CR>zz")
 vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
 vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
 
-vim.keymap.set(
-	"n",
-	"<leader>ee",
-	"oif err != nil {<CR>}<Esc>Oreturn err<Esc>"
-)
-
-vim.keymap.set("n", "<leader>vpp", "<cmd>e ~/.dotfiles/nvim/.config/nvim/lua/theprimeagen/packer.lua<CR>");
-vim.keymap.set("n", "<leader>mr", "<cmd>CellularAutomaton make_it_rain<CR>");
--- Custom Remaps
 vim.keymap.set("n", "t1", ":tabmove 0<CR>", { silent = true })
 vim.keymap.set("n", "t2", ":tabmove 2<CR>", { silent = true })
 vim.keymap.set("n", "t3", ":tabmove 3<CR>", { silent = true })
 vim.keymap.set("n", "t4", ":tabmove 4<CR>", { silent = true })
-vim.keymap.set("n", "-", ":NvimTreeFocus<CR>", { silent = true })
-vim.keymap.set({ 'i', "n" }, '<C-a>', '<cmd>lua vim.lsp.buf.code_action()<CR>', {})
+vim.keymap.set("n", "<C-->", ":NvimTreeFocus<CR>", { silent = true })
+vim.keymap.set("n", "=", ":NvimTreeFocus<CR>", { silent = true })
+vim.keymap.set(
+	{ 'n', 'v', 'i' },
+	'<C-a>',
+	'<cmd>lua require("fastaction").code_action()<CR>',
+	{ buffer = bufnr }
+)

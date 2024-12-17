@@ -87,10 +87,14 @@ return {
 					require('luasnip').lsp_expand(args.body) -- For `luasnip` users.
 				end,
 			},
+			completion = {
+				autocomplete = false
+			},
 			mapping = cmp.mapping.preset.insert({
 				['<C-p>'] = cmp.mapping.select_prev_item(cmp_select),
 				['<C-n>'] = cmp.mapping.select_next_item(cmp_select),
 				['<CR>'] = cmp.mapping.confirm({ select = true }),
+				['<C-y>'] = cmp.mapping.confirm({ select = true }),
 				["<C-Space>"] = cmp.mapping.complete(),
 			}),
 			sources = cmp.config.sources({

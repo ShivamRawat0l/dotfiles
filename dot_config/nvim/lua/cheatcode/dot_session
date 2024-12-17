@@ -14,10 +14,10 @@ else
   set shortmess=aoO
 endif
 badd +1 .config/nvim/lua/theprimeagen
-badd +20 .config/nvim/lua/theprimeagen/session.lua
-badd +41 .config/nvim/lua/theprimeagen/remap.lua
+badd +21 .config/nvim/lua/theprimeagen/session.lua
+badd +11 .config/nvim/lua/theprimeagen/remap.lua
 badd +1 .config/nvim/lua/theprimeagen/neo-tree\ filesystem\ \[1]
-badd +6 .config/nvim/lua/theprimeagen/lazy/nvim-tree.lua
+badd +30 .config/nvim/lua/theprimeagen/lazy/nvim-tree.lua
 badd +1 .config/nvim/lua/theprimeagen/set.lua
 badd +11 .config/nvim/lua/theprimeagen/lazy_init.lua
 badd +2 .config/nvim/lua/.DS_Store
@@ -29,25 +29,36 @@ badd +2 .config/nvim/lua/theprimeagen/lazy/nvim-web-devicons.lua
 badd +10 .config/nvim/lua/theprimeagen/lazy/colors.lua
 badd +2 .config/nvim/lua/theprimeagen/lazy/cheatcode.lua
 badd +1 .config/nvim/lua/theprimeagen/lazy/mini.surround.lua
-badd +57 .config/nvim/lua/theprimeagen/lazy/oil.lua
-badd +1 .config/nvim/lua/theprimeagen/lazy/trouble.lua
-badd +6 .config/nvim/lua/theprimeagen/lazy/lsp.lua
+badd +32 .config/nvim/lua/theprimeagen/lazy/oil.lua
+badd +28 .config/nvim/lua/theprimeagen/lazy/trouble.lua
+badd +92 .config/nvim/lua/theprimeagen/lazy/lsp.lua
 badd +1 .config/nvim/lua/theprimeagen/lazy/nvim-autopairs.lua
 badd +4 .config/nvim/lua/theprimeagen/lazy/flash.lua
-badd +2 .config/nvim/lua/theprimeagen/lazy/noice.lua
-badd +1 .config/nvim/lua/theprimeagen/lazy/lualine.lua
+badd +6 .config/nvim/lua/theprimeagen/lazy/noice.lua
+badd +2 .config/nvim/lua/theprimeagen/lazy/lualine.lua
 badd +20 .config/nvim/lua/theprimeagen/lazy/blink.lua
 badd +4 .config/nvim/lua/theprimeagen/lazy/lazydev.lua
-badd +1 .config/nvim/lua/theprimeagen/lazy/init.lua
+badd +3 .config/nvim/lua/theprimeagen/lazy/init.lua
 badd +1 .config/nvim/lua/theprimeagen/lazy/snipe-lsp.lua
 badd +17 .config/nvim/lua/theprimeagen/lazy/harpoon.lua
-badd +31 .config/nvim/lua/theprimeagen/lazy/fugitive.lua
+badd +4 .config/nvim/lua/theprimeagen/lazy/fastaction.lua
+badd +6 .config/nvim/lua/theprimeagen/lazy/lightbulb.lua
+badd +7 .config/nvim/lua/theprimeagen/lazy/quicker.lua
+badd +3 term://~/.config/nvim/lua/theprimeagen//76412:/bin/zsh
+badd +8 .config/nvim/lua/theprimeagen/lazy/telescope.lua
+badd +1 .config/nvim/lua/theprimeagen/lazy/copilot.lua
+badd +1 .config/nvim/lua/theprimeagen/lazy/git-signs.lua
+badd +1 .config/nvim/lua/theprimeagen/lazy/mini.diff.lua
+badd +1 .config/nvim/lua/theprimeagen/lazy/mini.git.lua
+badd +3 .config/nvim/lua/theprimeagen/lazy/prettier.lua
+badd +34 .config/nvim/lua/theprimeagen/terminal.lua
 argglobal
 %argdel
 $argadd .config/nvim/lua/theprimeagen
-edit .config/nvim/lua/theprimeagen/lazy/nvim-tree.lua
 tcd ~/.config/nvim/lua/theprimeagen
 argglobal
+enew
+file oil:///Users/shivamrawat/.config/nvim/lua/
 balt ~/.config/nvim/lua/theprimeagen/lazy/oil.lua
 setlocal fdm=manual
 setlocal fde=0
@@ -57,14 +68,6 @@ setlocal fdl=0
 setlocal fml=1
 setlocal fdn=20
 setlocal fen
-silent! normal! zE
-let &fdl = &fdl
-let s:l = 9 - ((8 * winheight(0) + 24) / 49)
-if s:l < 1 | let s:l = 1 | endif
-keepjumps exe s:l
-normal! zt
-keepjumps 9
-normal! 0
 lcd ~/.config/nvim/lua/theprimeagen
 tabnext 1
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0 && getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'

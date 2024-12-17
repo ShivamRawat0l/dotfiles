@@ -1,13 +1,10 @@
 local layout_strategies = require "telescope.pickers.layout_strategies"
 return {
 	"nvim-telescope/telescope.nvim",
-
 	tag = "0.1.5",
-
 	dependencies = {
 		"nvim-lua/plenary.nvim"
 	},
-
 	config = function()
 		local telescope = require("telescope")
 		telescope.setup({})
@@ -18,18 +15,12 @@ return {
 			local word = vim.fn.expand("<cword>")
 			builtin.grep_string({ search = word })
 		end)
-		vim.keymap.set('n', '<leader>pWs', function()
+		vim.keymap.set('n', '<leader>pws', function()
 			local word = vim.fn.expand("<cWORD>")
 			builtin.grep_string({ search = word })
 		end)
-		local first = true
 		vim.keymap.set('n', '<C-f>', function()
-			if first then
-				first = false
-				builtin.live_grep()
-			else
-				builtin.resume()
-			end
+			builtin.live_grep()
 		end)
 		vim.keymap.set('n', '<leader>vh', builtin.help_tags, {})
 		vim.keymap.set('n', '<leader>vc', builtin.colorscheme, {})
