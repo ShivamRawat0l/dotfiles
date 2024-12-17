@@ -51,7 +51,8 @@ return {
 	{
 		"catppuccin/nvim",
 		name = "catppuccin",
-		priority = 1000
+		priority = 1000,
+		enabled = false
 	},
 
 	{
@@ -59,6 +60,7 @@ return {
 		lazy = false,
 		priority = 1000,
 		opts = {},
+		enabled = false
 	},
 	{
 		"tiagovla/tokyodark.nvim",
@@ -68,6 +70,7 @@ return {
 			require("tokyodark").setup(opts) -- calling setup is optional
 			vim.cmd [[colorscheme tokyodark]]
 		end,
+		enabled = false
 	},
 	{ "EdenEast/nightfox.nvim" },
 	{
@@ -75,6 +78,7 @@ return {
 		name = 'zephyr',
 		lazy = false,
 		priority = 1000,
+		enabled = false
 	},
 	{
 		'uloco/bluloco.nvim',
@@ -84,16 +88,19 @@ return {
 		config = function()
 			-- your optional config goes here, see below.
 		end,
+		enabled = false
 	},
 	{
 		"sho-87/kanagawa-paper.nvim",
 		lazy = false,
 		priority = 1000,
 		opts = {},
+		enabled = false
 	},
 	{
 		"navarasu/onedark.nvim",
 		name = "onedark",
+		enabled = false,
 		config = function()
 			require("onedark").setup({
 				style = "darker",
@@ -109,8 +116,7 @@ return {
 		"neanias/everforest-nvim",
 		name = "everforestz",
 		config = function()
-			require("everforest").setup({
-			})
+			require("everforest").setup()
 		end,
 	},
 }

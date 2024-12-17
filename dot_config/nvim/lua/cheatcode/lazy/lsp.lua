@@ -8,12 +8,9 @@ return {
 		"hrsh7th/cmp-path",
 		"hrsh7th/cmp-cmdline",
 		"hrsh7th/nvim-cmp",
-		"L3MON4D3/LuaSnip",
-		"saadparwaiz1/cmp_luasnip",
 		"j-hui/fidget.nvim",
 		"onsails/lspkind.nvim",
 	},
-
 	config = function()
 		local lspconfig = require('lspconfig')
 		lspconfig.sourcekit.setup({
@@ -82,11 +79,6 @@ return {
 		local cmp_select = { behavior = cmp.SelectBehavior.Select }
 		local lspkind = require("lspkind")
 		cmp.setup({
-			snippet = {
-				expand = function(args)
-					require('luasnip').lsp_expand(args.body) -- For `luasnip` users.
-				end,
-			},
 			completion = {
 				autocomplete = false
 			},

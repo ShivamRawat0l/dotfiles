@@ -3,7 +3,7 @@ let s:so_save = &g:so | let s:siso_save = &g:siso | setg so=0 siso=0 | setl so=-
 let v:this_session=expand("<sfile>:p")
 silent only
 silent tabonly
-cd ~
+cd ~/.config/nvim/lua/cheatcode
 if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
@@ -13,53 +13,33 @@ if &shortmess =~ 'A'
 else
   set shortmess=aoO
 endif
-badd +1 .config/nvim/lua/theprimeagen
-badd +21 .config/nvim/lua/theprimeagen/session.lua
-badd +11 .config/nvim/lua/theprimeagen/remap.lua
-badd +1 .config/nvim/lua/theprimeagen/neo-tree\ filesystem\ \[1]
-badd +30 .config/nvim/lua/theprimeagen/lazy/nvim-tree.lua
-badd +1 .config/nvim/lua/theprimeagen/set.lua
-badd +11 .config/nvim/lua/theprimeagen/lazy_init.lua
-badd +2 .config/nvim/lua/.DS_Store
-badd +3 .config/nvim/lua/theprimeagen/lazy/cloak.lua
-badd +1 .config/nvim/lua/theprimeagen/lazy/git-blame.lua
-badd +5 .config/nvim/lua/theprimeagen/lazy/treesitter.lua
-badd +1 .config/nvim/lua/theprimeagen/init.lua
-badd +2 .config/nvim/lua/theprimeagen/lazy/nvim-web-devicons.lua
-badd +10 .config/nvim/lua/theprimeagen/lazy/colors.lua
-badd +2 .config/nvim/lua/theprimeagen/lazy/cheatcode.lua
-badd +1 .config/nvim/lua/theprimeagen/lazy/mini.surround.lua
-badd +32 .config/nvim/lua/theprimeagen/lazy/oil.lua
-badd +28 .config/nvim/lua/theprimeagen/lazy/trouble.lua
-badd +92 .config/nvim/lua/theprimeagen/lazy/lsp.lua
-badd +1 .config/nvim/lua/theprimeagen/lazy/nvim-autopairs.lua
-badd +4 .config/nvim/lua/theprimeagen/lazy/flash.lua
-badd +6 .config/nvim/lua/theprimeagen/lazy/noice.lua
-badd +2 .config/nvim/lua/theprimeagen/lazy/lualine.lua
-badd +20 .config/nvim/lua/theprimeagen/lazy/blink.lua
-badd +4 .config/nvim/lua/theprimeagen/lazy/lazydev.lua
-badd +3 .config/nvim/lua/theprimeagen/lazy/init.lua
-badd +1 .config/nvim/lua/theprimeagen/lazy/snipe-lsp.lua
-badd +17 .config/nvim/lua/theprimeagen/lazy/harpoon.lua
-badd +4 .config/nvim/lua/theprimeagen/lazy/fastaction.lua
-badd +6 .config/nvim/lua/theprimeagen/lazy/lightbulb.lua
-badd +7 .config/nvim/lua/theprimeagen/lazy/quicker.lua
-badd +3 term://~/.config/nvim/lua/theprimeagen//76412:/bin/zsh
-badd +8 .config/nvim/lua/theprimeagen/lazy/telescope.lua
-badd +1 .config/nvim/lua/theprimeagen/lazy/copilot.lua
-badd +1 .config/nvim/lua/theprimeagen/lazy/git-signs.lua
-badd +1 .config/nvim/lua/theprimeagen/lazy/mini.diff.lua
-badd +1 .config/nvim/lua/theprimeagen/lazy/mini.git.lua
-badd +3 .config/nvim/lua/theprimeagen/lazy/prettier.lua
-badd +34 .config/nvim/lua/theprimeagen/terminal.lua
+badd +1 ~/.config/nvim/lua/cheatcode
+badd +18 lazy/snipe.lua
+badd +38 lazy/treesitter.lua
+badd +3 lazy/nvim-web-devicons.lua
+badd +1 .DS_Store
+badd +64 lazy/nvim-tree.lua
+badd +1 lazy/nvim-notify.lua
+badd +1 lazy/lsp.lua
+badd +1 lazy/harpoon.lua
+badd +1 lazy/git-signs.lua
+badd +1 lazy/flash.lua
+badd +1 lazy/fastaction.lua
+badd +1 lazy/colors.lua
+badd +1 lazy/cloak.lua
+badd +1 lazy/ts-autotag.lua
+badd +1 lazy/trouble.lua
+badd +1 lazy/todo-comments.lua
+badd +1 lazy/telescope.lua
+badd +1 lazy/refactoring.lua
+badd +2 lazy/prettier.lua
 argglobal
 %argdel
-$argadd .config/nvim/lua/theprimeagen
-tcd ~/.config/nvim/lua/theprimeagen
+$argadd ~/.config/nvim/lua/cheatcode
 argglobal
 enew
-file oil:///Users/shivamrawat/.config/nvim/lua/
-balt ~/.config/nvim/lua/theprimeagen/lazy/oil.lua
+file oil:///Users/shivamrawat/.config/nvim/lua/cheatcode/lazy/
+balt lazy/prettier.lua
 setlocal fdm=manual
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -68,7 +48,7 @@ setlocal fdl=0
 setlocal fml=1
 setlocal fdn=20
 setlocal fen
-lcd ~/.config/nvim/lua/theprimeagen
+lcd ~/.config/nvim/lua/cheatcode
 tabnext 1
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0 && getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'
   silent exe 'bwipe ' . s:wipebuf
@@ -81,7 +61,6 @@ if filereadable(s:sx)
   exe "source " . fnameescape(s:sx)
 endif
 let &g:so = s:so_save | let &g:siso = s:siso_save
-nohlsearch
 doautoall SessionLoadPost
 unlet SessionLoad
 " vim: set ft=vim :

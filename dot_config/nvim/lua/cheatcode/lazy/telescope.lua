@@ -1,4 +1,3 @@
-local layout_strategies = require "telescope.pickers.layout_strategies"
 return {
 	"nvim-telescope/telescope.nvim",
 	tag = "0.1.5",
