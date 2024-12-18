@@ -79,7 +79,6 @@ return {
 				[";"] = "actions.select",
 				["<CR>"] = "actions.select",
 				["<C-v>"] = { "actions.select", opts = { vertical = true } },
-				["<C-h>"] = { "actions.select", opts = { horizontal = true } },
 				["q"] = { "actions.close", mode = "n" },
 				["<C-l>"] = "actions.refresh",
 				["gs"] = { "actions.change_sort", mode = "n" },

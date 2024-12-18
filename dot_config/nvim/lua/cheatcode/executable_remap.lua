@@ -27,8 +27,6 @@ vim.keymap.set({ "n", "v" }, "<leader>d", [["_d]])
 -- This is going to get me cancelled
 vim.keymap.set("i", "<C-c>", "<Esc>")
 
-vim.keymap.set("n", "Q", "<nop>")
-
 vim.keymap.set("n", "<leader>f", function()
 	vim.lsp.buf.format({
 		formatting_options = {
@@ -48,16 +46,3 @@ vim.keymap.set("n", "<leader>j", "<cmd>lprev<CR>zz")
 
 vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
 vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
-
-vim.keymap.set("n", "t1", ":tabmove 0<CR>", { silent = true })
-vim.keymap.set("n", "t2", ":tabmove 2<CR>", { silent = true })
-vim.keymap.set("n", "t3", ":tabmove 3<CR>", { silent = true })
-vim.keymap.set("n", "t4", ":tabmove 4<CR>", { silent = true })
-vim.keymap.set("n", "<C-->", ":NvimTreeFocus<CR>", { silent = true })
-vim.keymap.set("n", "=", ":NvimTreeFocus<CR>", { silent = true })
-vim.keymap.set(
-	{ 'n', 'v', 'i' },
-	'<C-a>',
-	'<cmd>lua require("fastaction").code_action()<CR>',
-	{ buffer = bufnr }
-)

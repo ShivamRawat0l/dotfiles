@@ -1,7 +1,6 @@
 vim.opt.smartindent = true
 vim.opt.autoindent = true
 
-
 vim.opt.nu = true
 vim.opt.relativenumber = true
 
@@ -37,3 +36,7 @@ vim.opt.expandtab = false
 
 vim.opt.softtabstop = 4
 vim.opt.smartindent = true
+
+vim.g.netrw_browse_split = 0
+vim.g.netrw_banner = 0
+vim.g.netrw_winsize = 25

@@ -24,8 +24,6 @@ vim.api.nvim_create_autocmd("VimEnter", {
 	end,
 })
 
-print("Session file: " .. get_startup_path() .. "/.session")
-
 local function format_file()
 	vim.cmd('stopinsert')
 	vim.lsp.buf.format()

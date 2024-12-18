@@ -60,5 +60,7 @@ return {
 				end,
 			},
 		}
+		vim.keymap.set("n", "<C-->", ":NvimTreeFocus<CR>", { silent = true })
+		vim.keymap.set("n", "=", ":NvimTreeFocus<CR>", { silent = true })
 	end
 }

@@ -1,7 +1,10 @@
 return {
 	"folke/noice.nvim",
 	event = "VeryLazy",
-	init = function() vim.opt.lazyredraw = false end,
+	dependencies = {
+		"MunifTanjim/nui.nvim",
+		"rcarriga/nvim-notify",
+	},
 	config = function()
 		require("noice").setup {
 			lsp = {
@@ -38,7 +41,4 @@ return {
 			}
 		}
 	end,
-	dependencies = {
-		"MunifTanjim/nui.nvim",
-	}
 }
