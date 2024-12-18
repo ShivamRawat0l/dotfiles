@@ -1,26 +1,104 @@
-### ThePrimeagen's init.lua
-Prerequisite: install [ripgrep](https://github.com/BurntSushi/ripgrep).
-<details open>
-<summary>API/</summary>
-  <details open>
-      <summary>Details/?</summary>
-<br>
- APP.tsx
-</details>
-<br>
-Well, you asked for it!
-</details>
-[The full video of me setting up this repo](https://www.youtube.com/watch?v=w7i4amO_zaE)
+# .dotfiles/dot_config/nvim
 
-For anyone that is interested in my vimrc, i will have a commit log below
-documenting each one of my commits (easy to C-f the change you want to know
-about though i would just suggest `git log -S`).
+<a href="https://dotfyle.com/ShivamRawat0l/dotfiles-dotconfig-nvim"><img src="https://dotfyle.com/ShivamRawat0l/dotfiles-dotconfig-nvim/badges/plugins?style=flat" /></a>
+<a href="https://dotfyle.com/ShivamRawat0l/dotfiles-dotconfig-nvim"><img src="https://dotfyle.com/ShivamRawat0l/dotfiles-dotconfig-nvim/badges/leaderkey?style=flat" /></a>
+<a href="https://dotfyle.com/ShivamRawat0l/dotfiles-dotconfig-nvim"><img src="https://dotfyle.com/ShivamRawat0l/dotfiles-dotconfig-nvim/badges/plugin-manager?style=flat" /></a>
 
-### Change Log
-* [33eee9ad](https://github.com/ThePrimeagen/init.lua/commit/33eee9ad0c035a92137d99dae06a2396be4c892e) initial commits
-* [cb210006](https://github.com/ThePrimeagen/init.lua/commit/cb210006356b4b613b71c345cb2b02eefa961fc0) netrw, autogroups for yank highlighting, and auto remove whitespace
-* [c8c0bf4a](https://github.com/ThePrimeagen/init.lua/commit/c8c0bf4aeacd0bd77136d9c5ee490680515a106b) zenmode.  i really like this plugin
-* [81c770d2](https://github.com/ThePrimeagen/init.lua/commit/81c770d2d2e32e59916b39c7f5babbc8560f7a82) copilot testing
-* [4a96e645](https://github.com/ThePrimeagen/init.lua/commit/4a96e6457b0a0241ca7361ce62177aa6b9a33a38) fugitive mappings for push and pull
-* [a3bad06a](https://github.com/ThePrimeagen/init.lua/commit/a3bad06a4681c322538d609aa1c0bd18880f77c6) disabled eslint.  driving me crazy
 
+## Install Instructions
+
+ > Install requires Neovim 0.9+. Always review the code before installing a configuration.
+
+Clone the repository and install the plugins:
+
+```sh
+git clone git@github.com:ShivamRawat0l/.dotfiles ~/.config/ShivamRawat0l/.dotfiles
+```
+
+Open Neovim with this config:
+
+```sh
+NVIM_APPNAME=ShivamRawat0l/.dotfiles/dot_config/nvim nvim
+```
+
+## Plugins
+
+### ai
+
++ [supermaven-inc/supermaven-nvim](https://dotfyle.com/plugins/supermaven-inc/supermaven-nvim)
+### colorscheme
+
++ [uloco/bluloco.nvim](https://dotfyle.com/plugins/uloco/bluloco.nvim)
++ [navarasu/onedark.nvim](https://dotfyle.com/plugins/navarasu/onedark.nvim)
++ [catppuccin/nvim](https://dotfyle.com/plugins/catppuccin/nvim)
++ [neanias/everforest-nvim](https://dotfyle.com/plugins/neanias/everforest-nvim)
++ [glepnir/zephyr-nvim](https://dotfyle.com/plugins/glepnir/zephyr-nvim)
++ [EdenEast/nightfox.nvim](https://dotfyle.com/plugins/EdenEast/nightfox.nvim)
++ [craftzdog/solarized-osaka.nvim](https://dotfyle.com/plugins/craftzdog/solarized-osaka.nvim)
++ [sho-87/kanagawa-paper.nvim](https://dotfyle.com/plugins/sho-87/kanagawa-paper.nvim)
++ [tiagovla/tokyodark.nvim](https://dotfyle.com/plugins/tiagovla/tokyodark.nvim)
+### colorscheme-creation
+
++ [rktjmp/lush.nvim](https://dotfyle.com/plugins/rktjmp/lush.nvim)
+### comment
+
++ [folke/todo-comments.nvim](https://dotfyle.com/plugins/folke/todo-comments.nvim)
+### completion
+
++ [hrsh7th/nvim-cmp](https://dotfyle.com/plugins/hrsh7th/nvim-cmp)
+### diagnostics
+
++ [folke/trouble.nvim](https://dotfyle.com/plugins/folke/trouble.nvim)
+### file-explorer
+
++ [nvim-tree/nvim-tree.lua](https://dotfyle.com/plugins/nvim-tree/nvim-tree.lua)
++ [stevearc/oil.nvim](https://dotfyle.com/plugins/stevearc/oil.nvim)
+### fuzzy-finder
+
++ [nvim-telescope/telescope.nvim](https://dotfyle.com/plugins/nvim-telescope/telescope.nvim)
+### git
+
++ [lewis6991/gitsigns.nvim](https://dotfyle.com/plugins/lewis6991/gitsigns.nvim)
+### icon
+
++ [nvim-tree/nvim-web-devicons](https://dotfyle.com/plugins/nvim-tree/nvim-web-devicons)
++ [echasnovski/mini.icons](https://dotfyle.com/plugins/echasnovski/mini.icons)
+### lsp
+
++ [j-hui/fidget.nvim](https://dotfyle.com/plugins/j-hui/fidget.nvim)
++ [onsails/lspkind.nvim](https://dotfyle.com/plugins/onsails/lspkind.nvim)
++ [neovim/nvim-lspconfig](https://dotfyle.com/plugins/neovim/nvim-lspconfig)
+### lsp-installer
+
++ [williamboman/mason.nvim](https://dotfyle.com/plugins/williamboman/mason.nvim)
+### marks
+
++ [ThePrimeagen/harpoon](https://dotfyle.com/plugins/ThePrimeagen/harpoon)
+### motion
+
++ [folke/flash.nvim](https://dotfyle.com/plugins/folke/flash.nvim)
+### nvim-dev
+
++ [nvim-lua/plenary.nvim](https://dotfyle.com/plugins/nvim-lua/plenary.nvim)
++ [MunifTanjim/nui.nvim](https://dotfyle.com/plugins/MunifTanjim/nui.nvim)
+### plugin-manager
+
++ [folke/lazy.nvim](https://dotfyle.com/plugins/folke/lazy.nvim)
+### statusline
+
++ [nvim-lualine/lualine.nvim](https://dotfyle.com/plugins/nvim-lualine/lualine.nvim)
+### syntax
+
++ [nvim-treesitter/nvim-treesitter](https://dotfyle.com/plugins/nvim-treesitter/nvim-treesitter)
+### utility
+
++ [folke/noice.nvim](https://dotfyle.com/plugins/folke/noice.nvim)
++ [leath-dub/snipe.nvim](https://dotfyle.com/plugins/leath-dub/snipe.nvim)
+## Language Servers
+
++ gopls
++ lua_ls
++ rust_analyzer
+
+
+ This readme was generated by [Dotfyle](https://dotfyle.com)
