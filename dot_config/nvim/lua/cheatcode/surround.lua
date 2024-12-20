@@ -5,6 +5,8 @@ vim.keymap.set("v", "[", "di[]<C-c>hp")
 vim.keymap.set("v", "]", "di[]<C-c>hp")
 vim.keymap.set("v", "(", "di()<C-c>hp")
 vim.keymap.set("v", ")", "di()<C-c>hp")
+vim.keymap.set("v", "<", "di<><C-c>hp")
+vim.keymap.set("v", ">", "di<><C-c>hp")
 vim.keymap.set("v", "'", "di''<C-c>hp")
 vim.keymap.set("v", '"', 'di""<C-c>hp')
 -- Currently only removed the brackets

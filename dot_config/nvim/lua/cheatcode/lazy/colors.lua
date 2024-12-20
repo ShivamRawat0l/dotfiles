@@ -72,7 +72,7 @@ return {
 		end,
 		enabled = false
 	},
-	{ "EdenEast/nightfox.nvim" },
+	{ "EdenEast/nightfox.nvim", enabled = false },
 	{
 		'glepnir/zephyr-nvim',
 		name = 'zephyr',

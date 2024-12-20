@@ -5,16 +5,18 @@ return {
 	},
 	opts = {
 		ui = {
+			position = "cursor",
+
 			open_win_override = {
 				title = "",
 				border = "solid",
 			},
-			text_align = "right",
+			text_align = "file-first",
 			preselect_current = true,
 		},
 		navigate = {
+			under_cursor = ";",
 			open_vsplit = "<C-v>",
-			under_cursor = "<cr>",
 			change_tag = "C",
 		},
 		sort = "last"

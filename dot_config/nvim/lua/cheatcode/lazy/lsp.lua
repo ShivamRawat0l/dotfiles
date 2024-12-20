@@ -83,8 +83,15 @@ return {
 				autocomplete = false
 			},
 			mapping = cmp.mapping.preset.insert({
-				['<C-p>'] = cmp.mapping.select_prev_item(cmp_select),
-				['<C-n>'] = cmp.mapping.select_next_item(cmp_select),
+				['<C-n>'] = function(fallback)
+					if cmp.visible() then
+						cmp.select_next_item()
+					else
+						cmp.complete()
+						cmp.select_next_item()
+					end
+				end,
+				['C-p>'] = cmp.mapping.select_prev_item(),
 				['<CR>'] = cmp.mapping.confirm({ select = true }),
 				['<C-y>'] = cmp.mapping.confirm({ select = true }),
 				["<C-Space>"] = cmp.mapping.complete(),
