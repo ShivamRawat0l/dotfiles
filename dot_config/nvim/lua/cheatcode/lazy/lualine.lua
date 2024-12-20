@@ -1,3 +1,9 @@
+function Recording()
+	local reg = vim.fn.reg_recording()
+	if reg == "" then return "" end -- not recording
+	return "Recording to " .. reg
+end
+
 return {
 	'nvim-lualine/lualine.nvim',
 	dependencies = { 'nvim-tree/nvim-web-devicons' },
@@ -8,12 +14,32 @@ return {
 				theme = 'auto',
 			},
 			sections = {
-				lualine_a = { 'mode' },
-				lualine_b = { 'branch', 'diff', 'diagnostics' },
-				lualine_c = { 'filename' },
-				lualine_x = { 'filetype' },
-				lualine_y = { 'progress' },
-				lualine_z = { 'location' }
+				lualine_a = {
+					'mode'
+				},
+				lualine_b = {
+					'branch',
+					'diff',
+					'diagnostics'
+				},
+				lualine_c = {
+					'filename',
+					{
+						Recording,
+						color = {
+							bg = "#f00000", fg = "#000000"
+						}
+					}
+				},
+				lualine_x = {
+					'filetype'
+				},
+				lualine_y = {
+					'progress',
+				},
+				lualine_z = {
+					'location'
+				}
 			}
 		}
 		require('lualine').setup(opts)

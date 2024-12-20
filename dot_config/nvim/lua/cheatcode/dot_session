@@ -19,21 +19,23 @@ badd +18 lazy/snipe.lua
 badd +1 .DS_Store
 badd +28 lazy/harpoon.lua
 badd +47 remap.lua
-badd +77 lazy/colors.lua
-badd +9 lazy/refactoring.lua
+badd +1 lazy/colors.lua
+badd +11 lazy/refactoring.lua
 badd +9 surround.lua
-badd +23 lazy/telescope.lua
+badd +3 lazy/telescope.lua
 badd +1 lazy/fzf.lua
 badd +2 lazy/treesitter.lua
 badd +94 lazy/lsp.lua
 badd +32 lazy/trouble.lua
-badd +14 lazy/fastaction.lua
+badd +16 lazy/fastaction.lua
+badd +1 lazy/noice.lua
+badd +19 lazy/lualine.lua
 argglobal
 %argdel
 $argadd ~/.config/nvim/lua/cheatcode
-edit lazy/fastaction.lua
+edit lazy/lualine.lua
 argglobal
-balt remap.lua
+balt lazy/noice.lua
 setlocal fdm=manual
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -44,12 +46,12 @@ setlocal fdn=20
 setlocal fen
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 16 - ((15 * winheight(0) + 24) / 49)
+let s:l = 24 - ((23 * winheight(0) + 24) / 49)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 16
-normal! 040|
+keepjumps 24
+normal! 017|
 lcd ~/.config/nvim/lua/cheatcode
 tabnext 1
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0 && getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'
