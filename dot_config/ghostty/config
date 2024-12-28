@@ -1,0 +1,33 @@
+background = 000000
+theme = "Everforest Dark - Hard"
+font-family = "Victor Mono"
+bold-is-bright = true
+font-size = 18
+font-feature = -calt
+title = ""
+window-decoration = true
+fullscreen = false
+macos-non-native-fullscreen = false
+font-thicken = true
+window-save-state = always
+quit-after-last-window-closed = true
+quick-terminal-position = bottom
+macos-titlebar-style = tabs
+macos-titlebar-proxy-icon = hidden
+macos-icon = custom-style
+macos-icon-frame = chrome
+window-padding-x = 0
+window-padding-y = 0
+window-padding-balance = false
+window-step-resize = false
+window-padding-color = extend
+window-inherit-working-directory = true
+window-width = 9999
+window-height = 9999
+confirm-close-surface = false
+keybind = global:ctrl+t=toggle_quick_terminal
+keybind = ctrl+w>s=new_split:right
+keybind = ctrl+w>h=goto_split:left
+keybind = ctrl+w>j=goto_split:bottom
+keybind = ctrl+w>k=goto_split:top
+keybind = ctrl+w>l=goto_split:right
