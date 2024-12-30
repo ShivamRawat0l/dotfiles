@@ -38,7 +38,9 @@ autocmd('LspAttach', {
 	group = LSP_GROUP,
 	callback = function(e)
 		local opts = { buffer = e.buf }
-		vim.keymap.set("n", "gd", function() vim.lsp.buf.definition() end, opts)
+		vim.keymap.set("n", "gi", vim.lsp.buf.definition, opts)
+		vim.keymap.set("n", "gD", vim.lsp.buf.declaration, opts)
+		vim.keymap.set("n", "gd", vim.lsp.buf.implementation, opts)
 		vim.keymap.set("n", "K", function() vim.lsp.buf.hover() end, opts)
 		vim.keymap.set("n", "<leader>vd", function() vim.diagnostic.open_float() end, opts)
 		vim.keymap.set("n", "<leader>vrn", function() vim.lsp.buf.rename() end, opts)

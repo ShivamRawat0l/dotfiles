@@ -3,7 +3,6 @@ return {
 	opts = {},
 	config = function()
 		local fastaction = require('fastaction')
-		local isVisible = false
 		fastaction.setup({})
 		vim.keymap.set(
 			{ 'n', 'v', 'i' },

@@ -37,7 +37,6 @@ return {
 			ensure_installed = {
 				"lua_ls",
 				"rust_analyzer",
-				"gopls",
 			},
 			handlers = {
 				function(server_name) -- default handler (optional)
@@ -75,8 +74,11 @@ return {
 				end,
 			}
 		})
-
-		local cmp_select = { behavior = cmp.SelectBehavior.Select }
+		lspconfig.ts_ls.setup({
+			on_attach = function(client, bufnr)
+				require("workspace-diagnostics").populate_workspace_diagnostics(client, bufnr)
+			end
+		})
 		local lspkind = require("lspkind")
 		cmp.setup({
 			completion = {
@@ -155,5 +157,14 @@ return {
 				prefix = "",
 			},
 		})
+		lspconfig.rust_analyzer.setup {
+			settings = {
+				['rust-analyzer'] = {
+					diagnostics = {
+						enable = false,
+					}
+				}
+			}
+		}
 	end
 }

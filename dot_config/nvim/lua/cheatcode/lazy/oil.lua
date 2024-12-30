@@ -5,8 +5,10 @@ return {
 	config = function()
 		CustomOilBar = function()
 			local path = vim.fn.expand "%"
-			path = path:gsub("oil://", "  ")
-			return "  " .. vim.fn.fnamemodify(path, ":.")
+			path = path:gsub("oil://", " ")
+			local padding = string.rep("  ", 150)
+			local aligned_path = padding .. path
+			return "  " .. vim.fn.fnamemodify(aligned_path, ":.")
 		end
 
 		require("oil").setup({

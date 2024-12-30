@@ -1,7 +1,7 @@
 function Recording()
 	local reg = vim.fn.reg_recording()
 	if reg == "" then return "" end -- not recording
-	return "Recording to " .. reg
+	return reg
 end
 
 return {
@@ -27,7 +27,7 @@ return {
 					{
 						Recording,
 						color = {
-							bg = "#f00000", fg = "#000000"
+							bg = "#FF4365", fg = "#FFFFF3"
 						}
 					}
 				},

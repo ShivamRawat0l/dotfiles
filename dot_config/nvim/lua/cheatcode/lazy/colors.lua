@@ -1,3 +1,4 @@
+-- something like this
 function ColorMyPencils(theme)
 	theme = "everforest"
 	vim.cmd.colorscheme(theme)
@@ -11,6 +12,8 @@ function ColorMyPencils(theme)
 		--vim.api.nvim_set_hl(0, "DiagnosticVirtualTextInfo", { bg = color });
 		--vim.api.nvim_set_hl(0, "DiagnosticVirtualTextHint", { bg = color });
 		vim.api.nvim_set_hl(0, "Normal", { bg = color }); -- this is the background color of the editor
+		vim.api.nvim_set_hl(0, "Winbar", { bg = color }); -- this is the background color of the editor
+		vim.api.nvim_set_hl(0, "WinbarNC", { bg = color }); -- this is the background color of the editor
 		vim.api.nvim_set_hl(0, "NormalFloat", { bg = color })
 		vim.api.nvim_set_hl(0, "ColorColumn", { bg = "#020401" });
 		vim.api.nvim_set_hl(0, "NormalNC", { bg = color });
@@ -54,31 +57,21 @@ return {
 		priority = 1000,
 		enabled = false
 	},
-
-	{
-		"craftzdog/solarized-osaka.nvim",
-		lazy = false,
-		priority = 1000,
-		opts = {},
-		enabled = false
-	},
-	{
-		"tiagovla/tokyodark.nvim",
-		opts = {
-		},
-		config = function(_, opts)
-			require("tokyodark").setup(opts) -- calling setup is optional
-			vim.cmd [[colorscheme tokyodark]]
-		end,
-		enabled = false
-	},
 	{ "EdenEast/nightfox.nvim", enabled = false },
 	{
 		'glepnir/zephyr-nvim',
 		name = 'zephyr',
 		lazy = false,
 		priority = 1000,
-		enabled = false
+		enabled = true
+	},
+	{
+		'AlexvZyl/nordic.nvim',
+		lazy = false,
+		priority = 1000,
+		config = function()
+			require('nordic').load()
+		end
 	},
 	{
 		'uloco/bluloco.nvim',
@@ -105,7 +98,7 @@ return {
 			require("onedark").setup({
 				style = "darker",
 				lualine = {
-					transparent = true, -- lualine center bar transparency
+					transparent = true,
 				},
 				highlights = {}
 			})
@@ -115,8 +108,15 @@ return {
 	{
 		"neanias/everforest-nvim",
 		name = "everforestz",
+		priority = 1000,
+		lazy = false,
+		version = false,
 		config = function()
-			require("everforest").setup()
+			local everforest = require("everforest")
+			everforest.setup({
+				italics = true,
+				disable_italic_comments = false,
+			})
 		end,
 	},
 }
