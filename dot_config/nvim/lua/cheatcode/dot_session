@@ -18,19 +18,19 @@ badd +2 lazy_init.lua
 badd +18 lazy/snipe.lua
 badd +1 .DS_Store
 badd +28 lazy/harpoon.lua
-badd +47 remap.lua
+badd +44 remap.lua
 badd +3 lazy/colors.lua
 badd +11 lazy/refactoring.lua
-badd +9 surround.lua
+badd +8 surround.lua
 badd +28 lazy/telescope.lua
 badd +1 lazy/fzf.lua
-badd +21 lazy/treesitter.lua
+badd +23 lazy/treesitter.lua
 badd +77 lazy/lsp.lua
 badd +28 lazy/trouble.lua
-badd +12 lazy/fastaction.lua
+badd +13 lazy/fastaction.lua
 badd +1 lazy/noice.lua
 badd +4 lazy/lualine.lua
-badd +42 init.lua
+badd +43 init.lua
 badd +1 lazy/disabled/lsp.lua
 badd +40 lazy/blink.lua
 badd +9 lazy/oil.lua
@@ -40,10 +40,8 @@ badd +28 session.lua
 argglobal
 %argdel
 $argadd ~/.config/nvim/lua/cheatcode
+edit lazy/treesitter.lua
 argglobal
-enew
-file oil:///Users/shivamrawat/.config/nvim/lua/cheatcode/lazy/
-balt session.lua
 setlocal fdm=manual
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -52,6 +50,14 @@ setlocal fdl=0
 setlocal fml=1
 setlocal fdn=20
 setlocal fen
+silent! normal! zE
+let &fdl = &fdl
+let s:l = 23 - ((22 * winheight(0) + 22) / 45)
+if s:l < 1 | let s:l = 1 | endif
+keepjumps exe s:l
+normal! zt
+keepjumps 23
+normal! 041|
 lcd ~/.config/nvim/lua/cheatcode
 tabnext 1
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0 && getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'

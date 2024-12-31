@@ -10,6 +10,7 @@ return {
 			'<cmd>lua require("fastaction").code_action()<CR>',
 			{ buffer = bufnr }
 		)
+		vim.keymap.set('n', "<C-i>", "<C-i>", { noremap = true })
 		vim.keymap.set('n', "<Tab>", function()
 			if #vim.api.nvim_list_wins() > 1 then
 				pcall(vim.cmd, "close")
