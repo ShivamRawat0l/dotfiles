@@ -34,11 +34,14 @@ function ColorMyPencils(theme)
 		vim.api.nvim_set_hl(0, "CmpDocumentation", { bg = color });
 		vim.api.nvim_set_hl(0, "LineNr", { bg = color });
 		vim.api.nvim_set_hl(0, "CursorLineNr", { bg = color });
+		--vim.api.nvim_set_hl(0, "TelescopeSelection", { bg = "#000000" });
 		vim.api.nvim_set_hl(0, "TelescopeBorder", { bg = color });
 		vim.api.nvim_set_hl(0, "TelescopeNormal", { bg = color });
 		vim.api.nvim_set_hl(0, "TelescopePromptBorder", { bg = color });
+		--vim.api.nvim_set_hl(0, "TelescopePromptPrefix", { bg = "#fff000" });
 		vim.api.nvim_set_hl(0, "TelescopeResultsBorder", { bg = color });
 		vim.api.nvim_set_hl(0, "TelescopePreviewBorder", { bg = color });
+		vim.api.nvim_set_hl(0, "TelescopeMatching", { bg = "#10221f" });
 		vim.api.nvim_set_hl(0, "MiniFilesBorder", { bg = color });
 		vim.api.nvim_set_hl(0, "MiniFilesNormal", { bg = color });
 		vim.api.nvim_set_hl(0, "VertSplit", { bg = color });
