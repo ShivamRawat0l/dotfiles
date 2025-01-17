@@ -34,6 +34,22 @@ local function save_file()
 end
 
 if get_startup_path() == "" then
+	vim.keymap.set({ "n", "i" }, "<D-s>", function()
+		if vim.bo.modified then
+			format_file()
+			save_file()
+		end
+	end, { expr = false, silent = true, noremap = true, remap = true })
+else
+	vim.keymap.set({ "n", "i" }, "<D-s>", function()
+		if vim.bo.modified then
+			format_file()
+			save_file()
+			vim.cmd("mksession! " .. get_startup_path() .. "/.session")
+		end
+	end, { expr = false, silent = true, noremap = true, remap = true })
+end
+if get_startup_path() == "" then
 	vim.keymap.set({ "n", "i" }, "<C-s>", function()
 		if vim.bo.modified then
 			format_file()
