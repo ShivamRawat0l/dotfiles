@@ -1,0 +1,8 @@
+#!/bin/sh
+
+chezmoi cd
+cd dot_config
+rm -rf nvim
+chezmoi add ~/.config/nvim
+cd ..
+
