@@ -133,8 +133,6 @@ source ~/.zsh_profile
 # bun
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
-
-PATH=/opt/homebrew/bin:${PATH}
-PATH=~/.console-ninja/.bin:$PATH
-. "/Users/shivamrawat/.deno/env"
+export PATH=$PATH:~/custom-scripts
+export PATH=/opt/homebrew/bin:${PATH}
 export LC_ALL=en_US.UTF-8
