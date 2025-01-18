@@ -25,7 +25,7 @@ badd +15 surround.lua
 badd +17 lazy/telescope.lua
 badd +1 lazy/fzf.lua
 badd +23 lazy/treesitter.lua
-badd +77 lazy/lsp.lua
+badd +5 lazy/lsp.lua
 badd +28 lazy/trouble.lua
 badd +13 lazy/fastaction.lua
 badd +1 lazy/noice.lua
@@ -36,13 +36,23 @@ badd +40 lazy/blink.lua
 badd +9 lazy/oil.lua
 badd +2 lazy/workspace-diagnostic.lua
 badd +12 lazy/conform.lua
-badd +36 session.lua
+badd +44 session.lua
+badd +17 lazy/luasnip.lua
+badd +10 lazy/nvim-tree.lua
+badd +2 lazy/nvim-colorizer.lua
 argglobal
 %argdel
 $argadd ~/.config/nvim/lua/cheatcode
-edit session.lua
+edit lazy/luasnip.lua
+wincmd t
+let s:save_winminheight = &winminheight
+let s:save_winminwidth = &winminwidth
+set winminheight=0
+set winheight=1
+set winminwidth=0
+set winwidth=1
 argglobal
-balt remap.lua
+balt lazy/lsp.lua
 setlocal fdm=manual
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -53,12 +63,12 @@ setlocal fdn=20
 setlocal fen
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 44 - ((30 * winheight(0) + 24) / 48)
+let s:l = 17 - ((16 * winheight(0) + 24) / 48)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 44
-normal! 013|
+keepjumps 17
+normal! 0
 lcd ~/.config/nvim/lua/cheatcode
 tabnext 1
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0 && getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'
@@ -67,6 +77,8 @@ endif
 unlet! s:wipebuf
 set winheight=1 winwidth=20
 let &shortmess = s:shortmess_save
+let &winminheight = s:save_winminheight
+let &winminwidth = s:save_winminwidth
 let s:sx = expand("<sfile>:p:r")."x.vim"
 if filereadable(s:sx)
   exe "source " . fnameescape(s:sx)
