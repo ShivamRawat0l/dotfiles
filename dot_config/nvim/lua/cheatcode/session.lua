@@ -11,16 +11,24 @@ local function get_startup_path()
 	return ""
 end
 
+local function create_path(path)
+	local result = os.execute("mkdir -p " .. path)
+	if result == nil then
+		print("Error creating directory: " .. path)
+		return false
+	else
+		return true
+	end
+end
+
+
 vim.api.nvim_create_autocmd("VimEnter", {
 	callback = function()
-		local startup_path = get_startup_path()
+		local startup_path = "~/sessions" .. get_startup_path()
+		create_path(startup_path)
 		if startup_path == "" then return end
 		local session_file = startup_path .. "/.session"
-		if vim.fn.filereadable(session_file) == 1 then
-			local ok, err = pcall(function()
-				vim.cmd("source " .. session_file)
-			end)
-		end
+		vim.cmd("source " .. session_file)
 	end,
 })
 
@@ -45,7 +53,7 @@ else
 		if vim.bo.modified then
 			format_file()
 			save_file()
-			vim.cmd("mksession! " .. get_startup_path() .. "/.session")
+			vim.cmd("mksession! " .. "~/sessions" .. get_startup_path() .. "/.session")
 		end
 	end, { expr = false, silent = true, noremap = true, remap = true })
 end
@@ -61,7 +69,7 @@ else
 		if vim.bo.modified then
 			format_file()
 			save_file()
-			vim.cmd("mksession! " .. get_startup_path() .. "/.session")
+			vim.cmd("mksession! " .. "~/sessions" .. get_startup_path() .. "/.session")
 		end
 	end, { expr = false, silent = true, noremap = true, remap = true })
 end

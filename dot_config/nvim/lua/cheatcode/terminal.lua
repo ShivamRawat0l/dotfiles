@@ -20,7 +20,6 @@ vim.api.nvim_create_user_command("TermToggle", function()
 		vim.cmd.term()
 		vim.g.term_buf_id = vim.api.nvim_get_current_buf()
 	end
-
 	vim.cmd.startinsert()
 end, {})
 
