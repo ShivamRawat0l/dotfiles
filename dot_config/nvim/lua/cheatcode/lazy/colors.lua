@@ -1,4 +1,3 @@
--- something like this
 function ColorMyPencils(theme)
 	theme = "everforest"
 	vim.cmd.colorscheme(theme)
@@ -20,7 +19,7 @@ function ColorMyPencils(theme)
 		vim.api.nvim_set_hl(0, "SignColumn", { bg = color });
 		vim.api.nvim_set_hl(0, "StatusLine", { bg = color, });
 		vim.api.nvim_set_hl(0, "StatusLineNC", { bg = color });
-		vim.api.nvim_set_hl(0, "ColorColumn", { bg = color });
+		--vim.api.nvim_set_hl(0, "ColorColumn", { bg = color });
 		vim.api.nvim_set_hl(0, "NormalFloat", { bg = color, link = "Normal" });
 		vim.api.nvim_set_hl(0, "Float", { bg = color });
 		vim.api.nvim_set_hl(0, "FloatBorder", { bg = color });

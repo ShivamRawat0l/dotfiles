@@ -3,7 +3,7 @@ let s:so_save = &g:so | let s:siso_save = &g:siso | setg so=0 siso=0 | setl so=-
 let v:this_session=expand("<sfile>:p")
 silent only
 silent tabonly
-cd ~/.config
+cd ~/.config/kitty
 if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
@@ -13,29 +13,12 @@ if &shortmess =~ 'A'
 else
   set shortmess=aoO
 endif
-badd +34 nvim/lua/theprimeagen/set.lua
-badd +41 nvim/lua/theprimeagen/remap.lua
-badd +7 nvim/lua/theprimeagen/lazy/flash.lua
-badd +10 nvim/lua/theprimeagen/lazy/mini.surround.lua
-badd +1 nvim/lua/theprimeagen/
-badd +19 nvim/lua/theprimeagen/lazy/lualine.lua
-badd +1 nvim/.DS_Store
-badd +3 nvim/LuaSnip/all.lua
-badd +24 nvim/LuaSnip/js.lua
-badd +31 nvim/LuaSnip/lua.lua
-badd +11 nvim/lua/cheatcode/lazy/luasnip.lua
-badd +1 nvim/lua/cheatcode/lazy/LuaSnip/lua.lua
-badd +1 nvim/lua/cheatcode/lazy/noice.lua
-badd +22 nvim/lua/cheatcode/lazy/LuaSnip/js.lua
-badd +1 nvim/lua/cheatcode/lazy/LuaSnip/checking.js
-badd +1 nvim/lua/cheatcode/lazy/LuaSnip/someth.jsx
-badd +22 nvim/lua/cheatcode/lazy/LuaSnip/javascript.lua
-badd +1 nvim/lua/cheatcode/lazy/LuaSnip/something.tsx
-badd +0 nvim/lua/cheatcode/lazy/LuaSnip/rust.lua
+badd +1 ~/.config/kitty/kitty-themes/themes/Mathias.conf
+badd +1 ./
 argglobal
 %argdel
-$argadd nvim/lua/theprimeagen/
-edit nvim/lua/cheatcode/lazy/luasnip.lua
+$argadd ./
+edit ~/.config/kitty/kitty-themes/themes/Mathias.conf
 argglobal
 setlocal fdm=manual
 setlocal fde=0
@@ -47,13 +30,12 @@ setlocal fdn=20
 setlocal fen
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 57 - ((44 * winheight(0) + 24) / 48)
+let s:l = 1 - ((0 * winheight(0) + 27) / 54)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 57
-normal! 09|
-lcd ~/.config/nvim
+keepjumps 1
+normal! 030|
 tabnext 1
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0 && getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'
   silent exe 'bwipe ' . s:wipebuf
