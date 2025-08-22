@@ -10,6 +10,13 @@ local LSP_GROUP = augroup('cheatcode', {})
 
 local autocmd = vim.api.nvim_create_autocmd
 local yank_group = augroup('HighlightYank', {})
+vim.diagnostic.config({
+	virtual_text = { current_line = true },
+	virtual_lines = false,
+	underline = true,
+	update_in_insert = false
+})
+
 
 vim.filetype.add({
 	extension = {

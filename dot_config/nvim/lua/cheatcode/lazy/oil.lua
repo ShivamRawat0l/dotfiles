@@ -19,11 +19,11 @@ return {
 				natural_order = "fast",
 			},
 			win_options = {
-				wrap = true,
-				winbar = "%{v:lua.CustomOilBar()}",
-				winhl = "Normal:Normal,Float:Float,FloatBorder:FloatBorder",
-				spell = false,
-				list = true,
+				wrap = false,
+				--winbar = "%{v:lua.CustomOilBar()}",
+				--winhl = "Normal:Normal,Float:Float,FloatBorder:FloatBorder",
+				--spell = false,
+				--list = true,
 			},
 			lsp_file_methods = {
 				enabled = true,

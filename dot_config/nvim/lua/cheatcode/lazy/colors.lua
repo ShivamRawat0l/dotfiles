@@ -1,7 +1,8 @@
 function ColorMyPencils(theme)
 	theme = "everforest"
 	vim.cmd.colorscheme(theme)
-	if true then
+
+	if false then
 		local color = "#000000"
 		--vim.api.nvim_set_hl(0, "Visual", { bg = "#264f78" });
 		vim.api.nvim_set_hl(0, "TroubleNormal", { bg = color });
@@ -116,8 +117,19 @@ return {
 		config = function()
 			local everforest = require("everforest")
 			everforest.setup({
+				transparent_background_level = 0,
 				italics = true,
 				disable_italic_comments = false,
+				inlay_hints_background = "dimmed",
+				background = "hard",
+				on_highlights = function(hl, _)
+					hl["@string.special.symbol.ruby"] = { link = "@field" }
+				end,
+				--colours_override = function(palette)
+				--	if vim.o.background == "dark" then
+				--		palette.bg0 = "#000000"
+				--	end
+				--end
 			})
 		end,
 	},

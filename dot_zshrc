@@ -136,3 +136,7 @@ export PATH="$BUN_INSTALL/bin:$PATH"
 export PATH=$PATH:~/custom-scripts
 export PATH=/opt/homebrew/bin:${PATH}
 export LC_ALL=en_US.UTF-8
+
+PATH=~/.console-ninja/.bin:$PATH
+# Added by Windsurf
+export PATH="/Users/shivamrawat/.codeium/windsurf/bin:$PATH"

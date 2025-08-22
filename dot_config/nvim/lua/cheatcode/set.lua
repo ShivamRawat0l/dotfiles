@@ -1,10 +1,11 @@
 vim.opt.smartindent = true
 vim.opt.autoindent = true
+vim.opt.linebreak = true
 
+vim.opt.wrap = true
 vim.opt.nu = true
 vim.opt.relativenumber = true
 
-vim.opt.wrap = true
 
 vim.opt.swapfile = false
 vim.opt.backup = false
@@ -24,8 +25,8 @@ vim.opt.isfname:append("@-@")
 
 vim.opt.updatetime = 50
 
-vim.opt.colorcolumn = "100"
-vim.opt.cursorlineopt = 'number'
+--vim.opt.colorcolumn = "120"
+--vim.opt.cursorlineopt = 'number'
 
 vim.opt.list = true
 vim.opt.listchars = { tab = "⤍ ", space = " " }

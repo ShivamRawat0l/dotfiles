@@ -22,6 +22,7 @@ local function create_path(path)
 end
 
 
+--[[
 vim.api.nvim_create_autocmd("VimEnter", {
 	callback = function()
 		local startup_path = "~/sessions" .. get_startup_path()
@@ -31,6 +32,7 @@ vim.api.nvim_create_autocmd("VimEnter", {
 		vim.cmd("source " .. session_file)
 	end,
 })
+--]]
 
 local function format_file()
 	vim.cmd('stopinsert')

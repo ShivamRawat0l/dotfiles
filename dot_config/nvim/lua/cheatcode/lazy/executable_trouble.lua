@@ -10,6 +10,7 @@ return {
 			relative = "win",
 			size = 0.4,
 		},
+		auto_preview = false,
 		keys = {
 			[";"] = "jump",
 			["<C-y>"] = "jump",
@@ -19,13 +20,13 @@ return {
 	cmd = "Trouble",
 	keys = {
 		{
-			"<leader>cas",
-			"<cmd>Trouble diagnostics toggle<cr>",
+			"<leader>tt",
+			"<cmd>Trouble diagnostics<cr>",
 			desc = "Diagnostics (Trouble)",
 		},
 		{
-			"<leader>t",
-			"<cmd>Trouble diagnostics win = { type = split, position=right }<cr>",
+			"<leader>ti",
+			"<cmd>Trouble diagnostics filter.buf=0 win = { type = split, position=right }<cr>",
 			desc = "Buffer Diagnostics (Trouble)",
 		},
 	},
